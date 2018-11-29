@@ -59,10 +59,10 @@ public class DashboardActivity extends AppCompatActivity
 
         // Spinner Drop down elements
         List<String> categories = new ArrayList<String>();
-        categories.add("Category 1");
-        categories.add("Category 2");
-        categories.add("Category 3");
-        categories.add("Category 4");
+        categories.add("uskys Deals poa");
+        categories.add("Flex Travel");
+        categories.add("Jenga pole pole");
+        categories.add("Buy motor vehicle");
 
         // Creating adapter for spinner
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
@@ -92,10 +92,10 @@ public class DashboardActivity extends AppCompatActivity
 
         // Spinner Drop down elements
         List<String> products_types = new ArrayList<String>();
-        products_types.add("Products Type_1");
-        products_types.add("Products Type_2");
-        products_types.add("Products Type_3");
-        products_types.add("Products Type_4");
+        products_types.add("Retail Deals");
+        products_types.add("Travel Deals");
+        products_types.add("Rent Deals");
+        products_types.add("Motor Vehicle Deals");
         // Creating adapter for spinner
         ArrayAdapter<String> dataAdapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, products_types);
 
@@ -149,7 +149,7 @@ public class DashboardActivity extends AppCompatActivity
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_signout) {
             //Toast.makeText(this, "Sign Out Clicked", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(DashboardActivity.this,DummyActivity.class);
+            Intent intent = new Intent(DashboardActivity.this,LoginActivity.class);
             startActivity(intent);
             return true;
         }
