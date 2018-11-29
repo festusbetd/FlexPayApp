@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activities.BookingActivity">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/activity_booking_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark" />
+    <LinearLayout
+        android:id="@+id/activity_booking_title"
+        android:layout_below="@+id/activity_booking_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        android:paddingBottom="10dp">
+        <TextView
+            android:id="@+id/activity_booking_home_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activity_booking_home_text"
+            android:textColor="@color/blue_lagoon"
+            android:textStyle="bold"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/activity_booking_arrow_booking_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activity_booking_booking_arrow_text"
+            android:textSize="18sp"/>
+
+    </LinearLayout>
+    <View
+        android:layout_below="@+id/activity_booking_title"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+    <LinearLayout
+        android:id="@+id/activity_booking_titleBars"
+        android:layout_below="@+id/activity_booking_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="0dp"
+        android:paddingTop="20dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/activity_booking_toolbar_active_goals_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:layout_marginLeft="10dp"
+            android:text="@string/activity_booking_active_booking_text"
+            android:textColor="@color/blue_lagoon"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/activity_booking_toolbar_successful_goals_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:layout_marginLeft="-8dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:textColor="@color/forest_green"
+            android:text="@string/activity_booking_successful_booking_text"
+            android:textSize="13sp"
+            />
+
+        <TextView
+            android:id="@+id/activity_booking_toolbar_overdue_goals_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="20dp"
+            android:layout_weight="0.5"
+            android:paddingRight="0dp"
+            android:layout_marginLeft="6dp"
+            android:text="@string/activity_booking_overdue_booking_text"
+            android:textColor="@color/coral"
+            android:textSize="13sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/activity_booking_toolbar_no_bookings"
+        android:layout_below="@+id/activity_booking_titleBars"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="0dp"
+        android:paddingTop="20dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/activity_booking_toolbar_active_goals"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:paddingLeft="10dp"
+            android:text="@string/activity_booking_active_booking1_text"
+            android:textColor="@color/forest_green"
+            android:textStyle="bold"
+            android:textSize="37sp" />
+
+        <TextView
+            android:id="@+id/activity_booking_toolbar_successful_goals"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/coral"
+            android:layout_weight="0.5"
+            android:paddingLeft="10dp"
+            android:text="@string/activity_booking_successful_booking1_text"
+            android:textStyle="bold"
+            android:textSize="37sp"
+            />
+        <TextView
+            android:id="@+id/activity_booking_toolbar_overdue_goals"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="0.5"
+            android:paddingLeft="10dp"
+            android:textColor="@color/coral"
+            android:textStyle="bold"
+            android:text="@string/activity_booking_overdue_booking1_text"
+            android:textSize="37sp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/activity_booking_booking_amount"
+        android:layout_below="@+id/activity_booking_toolbar_no_bookings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:orientation="horizontal"
+        android:paddingBottom="20dp">
+
+        <TextView
+            android:id="@+id/activity_booking_active_goals_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:text="@string/activity_booking_active_booking1_text1"
+            android:textColor="@color/blue_lagoon"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/activity_booking_successful_goals_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/forest_green"
+            android:text="@string/activity_booking_successful_booking_text1"
+            android:textSize="15sp"
+            />
+        <TextView
+            android:id="@+id/activity_booking_overdue_goals_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:gravity="right"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:textColor="@color/coral"
+            android:text="@string/activity_booking_overdue_booking_text1"
+            android:textSize="15sp"
+            />
+    </LinearLayout>
+    <View
+        android:layout_below="@+id/activity_booking_booking_amount"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+    <LinearLayout
+    android:id="@+id/BookingHistory"
+    android:layout_below="@+id/activity_booking_booking_amount"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingLeft="10dp"
+    android:paddingTop="20dp"
+    android:paddingBottom="10dp">
+    <TextView
+        android:id="@+id/activity_booking_booking_amount_goal_history"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_booking_overdue_history_text1"
+        android:layout_weight="1"
+        android:textColor="@color/blue_lagoon"
+        android:textStyle="bold"
+        android:textSize="14sp" />
+
+        <Spinner
+            android:id="@+id/activity_booking_spinner_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+   <!-- <TextView
+        android:id="@+id/activity_booking_booking_amount_goal_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:layout_gravity="center_vertical"
+        android:text="@string/activity_booking_overdue_status_text"
+        android:textSize="10sp"
+        />-->
+        <Spinner
+            android:id="@+id/activity_booking_spinner_show"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+   <!-- <TextView
+        android:id="@+id/activity_booking_booking_amount_goal_show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_weight="1"
+        android:text="@string/activity_booking_show_text"
+        android:textSize="10sp"
+        />-->
+</LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/activity_booking_booking_amount_booking_filter"
+        android:layout_below="@+id/BookingHistory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/regent_blue"
+        android:paddingTop="5dp"
+        android:paddingLeft="10dp"
+        android:paddingBottom="0dp">
+        <TextView
+            android:id="@+id/activity_booking_booking_amount_filter_by_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activity_booking_filter_booking_text"
+            android:textColor="@color/regent_blue"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/activity_booking_booking_filter"
+        android:layout_below="@+id/activity_booking_booking_amount_booking_filter"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:background="#D8EBF1"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        android:paddingBottom="20dp">
+        <EditText
+            android:id="@+id/activity_booking_editTextToDate"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:background="@color/pure_white"
+            android:drawableRight="@drawable/ic_date_range_black_24dp"
+            android:hint="@string/activity_booking_to_date_text"
+            android:inputType="date"
+            android:padding="15dp"
+            android:textColorHint="@color/blue_lagoon"
+            android:textSize="14sp" />
+        <View
+            android:id="@+id/activity_booking_line_below_date"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/darker_gray"/>
+        <EditText
+            android:id="@+id/activity_booking_editTextToDate2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:background="@color/pure_white"
+            android:drawableRight="@drawable/ic_date_range_black_24dp"
+            android:drawablePadding="10dp"
+            android:hint="@string/activity_booking_to_date_text2_text"
+            android:inputType="date"
+            android:padding="15dp"
+            android:textColorHint="@color/blue_lagoon"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </RelativeLayout>
+</RelativeLayout>

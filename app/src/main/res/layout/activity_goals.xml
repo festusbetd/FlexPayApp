@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.GoalsActivity"
+    android:orientation="vertical">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/goals_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        android:paddingBottom="10dp">
+        <TextView
+            android:id="@+id/activity_deals_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activity_goals_home"
+            android:textColor="@color/blue_lagoon"
+            android:textStyle="bold"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/activity_deals_arrow_goals"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activity_goals_arrow_goals"
+            android:textSize="18sp"/>
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="0dp"
+        android:paddingTop="20dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/activity_deals_active_goals_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:layout_marginLeft="10dp"
+            android:text="@string/activity_goals_active_goals"
+            android:textColor="#005B77"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/activity_deals_successful_goals_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:layout_marginLeft="-28dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:textColor="@color/green"
+            android:text="@string/activity_goals_successful_goals"
+            android:textSize="14sp"
+            />
+
+        <TextView
+            android:id="@+id/activity_deals_overdue_goals_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="20dp"
+            android:layout_weight="0.5"
+            android:paddingRight="0dp"
+            android:layout_marginLeft="-6dp"
+            android:text="@string/activity_goals_overdue_goals"
+            android:textColor="@color/coral"
+            android:textSize="14sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="0dp"
+        android:paddingTop="20dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/activity_deals_active_goals"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:paddingLeft="10dp"
+            android:text="10"
+            android:textColor="@color/blue_lagoon"
+            android:textStyle="bold"
+            android:textSize="37sp" />
+
+        <TextView
+            android:id="@+id/activity_deals_successful_goals_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/green"
+            android:layout_weight="0.5"
+            android:paddingLeft="10dp"
+            android:text="10"
+            android:textStyle="bold"
+            android:textSize="37sp"
+            />
+        <TextView
+            android:id="@+id/activity_deals_overdue_goals"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="0.5"
+            android:paddingLeft="10dp"
+            android:textColor="@color/coral"
+            android:textStyle="bold"
+            android:text="5"
+            android:textSize="37sp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:orientation="horizontal"
+        android:paddingBottom="20dp">
+
+        <TextView
+            android:id="@+id/activity_deals_active_goals_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:text="KES 120,000"
+            android:textColor="#005B77"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/activity_deals_successful_goals_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/green"
+            android:text="KES 150,000"
+            android:textSize="15sp"
+            />
+        <TextView
+            android:id="@+id/activity_deals_overdue_goals_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:gravity="right"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:textColor="#C97878"
+            android:text="KES 10,000"
+            android:textSize="15sp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="61.52dp"
+        android:background="@color/blue_lagoon"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:orientation="horizontal" >
+        <Button
+            android:id="@+id/activity_deals_btn_add_goal"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:textSize="18sp"
+            android:text="@string/activity_goals_add_a_goal"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:textStyle="bold"
+            android:shadowColor="@android:color/transparent"
+            android:textColor="@color/pure_white"
+            android:drawableRight="@drawable/ic_add_black_24dp"
+            android:background="@drawable/shapegoal"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:id="@+id/activity_deals_goal_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activity_goals_goals_history"
+            android:layout_weight="1"
+            android:textColor="@color/blue_lagoon"
+            android:textStyle="bold"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/activity_deals_goal_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical"
+            android:text="@string/activity_goals_status"
+            android:textSize="10sp"
+            />
+        <TextView
+            android:id="@+id/activity_deals_goal_show"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:text="@string/activity_goals_show"
+            android:textSize="10sp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#D8EBF1"
+        android:paddingTop="5dp"
+        android:paddingLeft="10dp"
+        android:paddingBottom="0dp">
+        <TextView
+            android:id="@+id/activity_deals_filter_by_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activity_goals_filter_by_date"
+            android:textColor="@color/blue_lagoon"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:background="@color/regent_blue"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        android:paddingBottom="20dp">
+        <EditText
+            android:id="@+id/activity_deals_editTextDate"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:background="#fff"
+            android:drawableRight="@drawable/ic_date_range_black_24dp"
+            android:hint="@string/activity_goals_from_date"
+            android:inputType="date"
+            android:padding="15dp"
+           android:textColorHint="@color/blue_lagoon"
+            android:textSize="14sp" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/darker_gray"/>
+        <EditText
+            android:id="@+id/activity_deals_editTextDateg"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:background="@color/pure_white"
+            android:drawableRight="@drawable/ic_date_range_black_24dp"
+            android:drawablePadding="10dp"
+            android:hint="@string/activity_goals_to_date2"
+            android:inputType="date"
+            android:padding="15dp"
+            android:textColorHint="@color/blue_lagoon"
+            android:textSize="14sp" />
+    </LinearLayout>
+</LinearLayout>

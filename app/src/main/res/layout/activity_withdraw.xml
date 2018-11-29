@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.withdrawActivity">
+<android.support.constraint.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/withdraw_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark" />
+        <LinearLayout
+            android:id="@+id/wallet_title"
+            android:layout_below="@+id/withdraw_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/wallet_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_withdraw_home_text"
+                android:textColor="#005B77"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+            <TextView
+                android:id="@+id/wallet_txttitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_withdraw_arrow_withdraw"
+                android:textSize="18sp"/>
+            <TextView
+                android:id="@+id/wallet_withdraw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_withdraw_arrow_withdraw_withdraw2"
+                android:textSize="18sp"/>
+        </LinearLayout>
+        <View
+            android:layout_below="@+id/wallet_title"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
+        <RelativeLayout
+            android:id="@+id/wallet_balance"
+            android:layout_below="@+id/wallet_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginLeft="20dp"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/textView231"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/spring_green"
+                    android:textSize="13sp"
+                    android:text="@string/activity_withdraw_wallet_balance" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/textViewTotalTransactions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="20dp"
+                    android:textColor="@color/blue_lagoon"
+                    android:textSize="13sp"
+                    android:text="@string/activity_withdraw_available_balance" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/withdraw_Value"
+            android:layout_below="@+id/wallet_balance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/textViewAccBalance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/spring_green"
+                    android:paddingLeft="20dp"
+                    android:textSize="37sp"
+                    android:text="50,000" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/textViewTotalTransactionsValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="20dp"
+                    android:textColor="@color/blue_lagoon"
+                    android:textSize="37sp"
+                    android:text="250,000" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/withdraw_message"
+            android:layout_below="@+id/withdraw_Value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/zircon"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:id="@+id/withdraw_Image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/image_withdraw"
+                    android:layout_width="123dp"
+                    android:layout_height="72dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/withdraw_image"
+                    android:textSize="37sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/text1"
+                android:layout_below="@+id/withdraw_Image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal">
+                <TextView
+
+                    android:id="@+id/textViewAvailableBalanceValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_menu_deals"
+                    android:text="@string/activity_withdraw_Easily_withdraw_directly_to_Mobile"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/text2"
+                android:layout_below="@+id/text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/textViewAvailableBalanceValue2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_menu_deals"
+                    android:text="@string/activity_withdraw_money_or_bank_account"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+       <RelativeLayout
+           android:id="@+id/withdraw_Choice"
+           android:layout_below="@+id/withdraw_message"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="vertical">
+
+           <RelativeLayout
+               android:id="@+id/TextViewScoreValue"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal">
+               <RelativeLayout
+                   android:id="@+id/mpesa_choice"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_alignParentLeft="true"
+                   android:orientation="horizontal">
+                   <TextView
+                       android:id="@+id/textViewPoor"
+                       android:layout_margin="18dp"
+                       android:layout_centerInParent="true"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:text="@string/activity_withdraw_to_mpesa"
+                       android:textColor="#005B77"
+                       android:textSize="14sp"
+                       android:textStyle="bold" />
+
+               </RelativeLayout>
+               <RelativeLayout
+                   android:id="@+id/ViewLine"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_below="@+id/mpesa_choice"
+                   android:orientation="horizontal"
+                   >
+                   <View
+                       android:layout_width="match_parent"
+                       android:layout_height="3dp"
+                       android:background="@color/shakespeare"/>
+
+               </RelativeLayout>
+               <RelativeLayout
+                   android:id="@+id/withdraw_mpesa_msg"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_below="@+id/mpesa_choice"
+                   android:orientation="horizontal"
+                   android:layout_margin="5dp"
+                   >
+                   <TextView
+                       android:id="@+id/textViewMpesaMsg"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_centerInParent="true"
+                       android:text="@string/activity_withdraw_enter_receipients_phone_number"
+                       android:textColor="@color/blue_lagoon"
+                       android:textSize="18sp" />
+
+               </RelativeLayout>
+               <RelativeLayout
+                   android:id="@+id/withdraw_mpesa_Details"
+                   android:layout_below="@+id/withdraw_mpesa_msg"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+
+                   android:orientation="horizontal"
+                   >
+                   <TextView
+                       android:id="@+id/textViewMpesaDetails"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_centerInParent="true"
+                       android:text="@string/activity_withdraw_leave_as_is_to_send_to_your_phone_number"
+                       android:textColor="@color/zircon"
+                       android:textSize="12sp" />
+
+               </RelativeLayout>
+               <RelativeLayout
+               android:id="@+id/withdraw_mpesa_Fields"
+               android:layout_below="@+id/withdraw_mpesa_Details"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal">
+               <EditText
+                   android:id="@+id/withdrwEditTextPhone"
+                   android:layout_width="fill_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="10dp"
+                   android:padding="15dp"
+                   android:alpha="0.8"
+                   android:drawableLeft="@drawable/ic_phone_in_talk_black_24dp"
+                   android:drawablePadding="10dp"
+                   android:hint="@string/activity_withdraw_hint_phone_number"
+                   android:layout_marginLeft="30dp"
+                   android:layout_marginRight="30dp"
+                   android:textColor="@color/blue_lagoon"
+                   android:inputType="phone"
+                   android:textColorHint="@color/white"
+                   android:textColorHighlight="@color/white"/>
+           </RelativeLayout>
+
+               <RelativeLayout
+                   android:id="@+id/withdraw_mpesa_Button"
+                   android:layout_below="@+id/withdraw_mpesa_Fields"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal"
+                   android:layout_marginTop="5dp"
+                   >
+                   <Button
+                       android:id="@+id/withdraw_mpesa_btn"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:layout_margin="20dp"
+                       android:layout_centerHorizontal="true"
+                       android:textSize="21sp"
+                       android:text="@string/activity_withdraw_next"
+                       android:textStyle="bold"
+                       android:shadowColor="@android:color/transparent"
+                       android:textColor="@color/pure_white"
+                       android:background="@drawable/shapenext"/>
+               </RelativeLayout>
+           </RelativeLayout>
+       </RelativeLayout>
+    </RelativeLayout>
+
+
+</android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>

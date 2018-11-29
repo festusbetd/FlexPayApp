@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.mercy.flexpay"
+   >
+
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <supports-screens
+        android:resizeable="true"
+        android:smallScreens="true"
+        android:normalScreens="true"
+        android:largeScreens="true"
+        android:xlargeScreens="true"
+        android:anyDensity="true" />
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".Activities.SplashActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activities.AccountManagementActivity" />
+        <activity android:name=".Activities.LoginActivity" />
+        <activity android:name=".Activities.SignUpActivity" />
+        <activity
+            android:name=".Activities.DashboardActivity"
+            android:label="@string/title_activity_dashboard"
+            android:theme="@style/AppTheme" >
+
+        </activity>
+        <activity android:name=".Activities.walletActivity" />
+        <activity android:name=".Activities.GoalsActivity" />
+        <activity android:name=".Activities.DealsActivity" />
+        <activity android:name=".Activities.BookingActivity" />
+        <activity android:name=".Activities.ProfileActivity" />
+        <activity android:name=".Activities.AddGoalActivity" />
+        <activity android:name=".Activities.withdrawActivity" />
+        <activity android:name=".Activities.SettingsActivity" />
+        <activity android:name=".Activities.MainPage" />
+        <activity android:name=".Activities.DummyActivity"></activity>
+    </application>
+
+</manifest>

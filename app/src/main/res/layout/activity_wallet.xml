@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".Activities.walletActivity"
+    android:orientation="vertical">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/wallet_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark" />
+     <LinearLayout
+         android:id="@+id/wallet_title"
+         android:layout_below="@+id/booking_toolbar"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_margin="10dp"
+         android:orientation="horizontal">
+         <TextView
+             android:id="@+id/time"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="@string/activity_wallet_home"
+             android:textColor="@color/blue_lagoon"
+             android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+             android:textStyle="bold"
+             android:textSize="23sp" />
+         <TextView
+             android:id="@+id/goals"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:textStyle="bold"
+             android:text="@string/activity_wallet_arrow_wallet1"
+             android:textSize="18sp"/>
+
+     </LinearLayout>
+     <View
+         android:layout_below="@+id/wallet_title"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:background="@android:color/darker_gray"/>
+     <RelativeLayout
+         android:id="@+id/wallet_balance"
+         android:layout_below="@+id/wallet_title"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:padding="15dp"
+         android:orientation="vertical">
+         <RelativeLayout
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignParentLeft="true"
+             android:orientation="horizontal">
+             <TextView
+                 android:id="@+id/textView231"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:textColor="@color/spring_green"
+                 android:textSize="13sp"
+                 android:text="@string/activity_wallet_wallet_balance" />
+
+         </RelativeLayout>
+         <RelativeLayout
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_centerHorizontal="true"
+             android:orientation="horizontal">
+             <TextView
+                 android:id="@+id/textViewAvailableBalance"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_centerInParent="true"
+                 android:textColor="@color/blue_lagoon"
+                 android:textSize="13sp"
+                 android:text="@string/activity_wallet_available_balance" />
+
+         </RelativeLayout>
+         <RelativeLayout
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignParentRight="true"
+             android:orientation="vertical">
+             <TextView
+                 android:id="@+id/textViewTotalTransactions"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_centerInParent="true"
+                 android:textColor="#005B77"
+                 android:textSize="13sp"
+                 android:text="@string/activity_wallet_total_transactions" />
+         </RelativeLayout>
+
+     </RelativeLayout>
+
+     <RelativeLayout
+         android:id="@+id/wallet_balance_Value"
+         android:layout_below="@+id/wallet_balance"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:padding="0dp"
+         android:orientation="horizontal">
+         <RelativeLayout
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignParentLeft="true"
+             android:orientation="horizontal">
+             <TextView
+                 android:id="@+id/textViewAccBalance"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:textColor="@color/spring_green"
+                 android:textSize="37sp"
+                 android:text="50K" />
+
+         </RelativeLayout>
+         <RelativeLayout
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_centerHorizontal="true"
+             android:orientation="horizontal">
+             <TextView
+                 android:id="@+id/textViewAvailableBalanceValue"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_centerInParent="true"
+                 android:textColor="@color/blue_lagoon"
+                 android:textSize="37sp"
+                 android:text="450k" />
+
+         </RelativeLayout>
+         <RelativeLayout
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignParentRight="true"
+             android:orientation="vertical">
+             <TextView
+                 android:id="@+id/textViewTotalTransactionsValue"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_centerInParent="true"
+                 android:textColor="@color/blue_lagoon"
+                 android:textSize="37sp"
+                 android:text="250k" />
+         </RelativeLayout>
+
+     </RelativeLayout>
+
+
+     <RelativeLayout
+         android:id="@+id/button"
+         android:layout_below="@+id/wallet_balance_Value"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="horizontal">
+
+         <RelativeLayout
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:padding="7dp"
+             android:layout_centerHorizontal="true"
+             android:orientation="horizontal">
+
+             <Button
+                 android:id="@+id/btnWithdraw"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_centerInParent="true"
+                 android:background="@drawable/shapewithdraw"
+                 android:padding="4dp"
+                 android:shadowColor="@android:color/transparent"
+                 android:text="Withdraw"
+                 android:textColor="@color/spring_green"
+                 android:textSize="13sp"
+                 android:textStyle="bold" />
+         </RelativeLayout>
+     </RelativeLayout>
+
+     <RelativeLayout
+         android:id="@+id/MyCreditScore"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_alignParentStart="true"
+         android:layout_below="@+id/button"
+         android:background="#E8EAEA"
+         android:orientation="vertical"
+         android:layout_alignParentLeft="true">
+
+         <RelativeLayout
+             android:id="@+id/deal1"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="horizontal"
+             android:paddingLeft="10dp"
+             android:paddingTop="10dp">
+
+             <RelativeLayout
+                 android:layout_width="200dp"
+                 android:layout_height="wrap_content"
+                 android:layout_alignParentLeft="true"
+                 android:layout_centerInParent="true"
+                 android:layout_margin="20dp"
+                 android:orientation="horizontal">
+
+                 <TextView
+                     android:id="@+id/textView2"
+                     android:layout_width="133dp"
+                     android:layout_height="wrap_content"
+                     android:text="My Credit Score"
+                     android:textColor="@color/blue_lagoon"
+                     android:textSize="14dp"
+                     android:textStyle="bold" />
+                 <TextView
+                     android:id="@+id/textView2311"
+                     android:layout_width="133dp"
+                     android:layout_below="@+id/textView2"
+                     android:layout_height="wrap_content"
+                     android:text="Good"
+                     android:textStyle="bold"
+                     android:textColor="@color/spring_green"
+                     android:textSize="14dp" />
+             </RelativeLayout>
+
+             <RelativeLayout
+                 android:layout_width="133dp"
+                 android:layout_height="wrap_content"
+                 android:layout_alignParentRight="true"
+                 android:orientation="horizontal">
+
+                 <TextView
+                     android:id="@+id/textView6"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="740"
+                     android:textColor="@color/spring_green"
+                     android:textSize="38sp"
+                     android:textStyle="bold" />
+
+             </RelativeLayout>
+         </RelativeLayout>
+
+         <RelativeLayout
+             android:id="@+id/ViewLine"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_below="@+id/deal1"
+             android:orientation="horizontal"
+             android:paddingLeft="20dp">
+             <View
+                 android:layout_margin="10dp"
+                 android:layout_width="match_parent"
+                 android:layout_height="3dp"
+                 android:background="@android:color/darker_gray"/>
+
+         </RelativeLayout>
+         <RelativeLayout
+             android:id="@+id/TextViewScoreValue"
+             android:layout_below="@+id/ViewLine"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="horizontal">
+             <RelativeLayout
+                 android:layout_width="133dp"
+                 android:layout_height="wrap_content"
+                 android:layout_alignParentLeft="true"
+                 android:orientation="horizontal">
+                 <TextView
+                     android:id="@+id/textViewPoor"
+                     android:layout_centerInParent="true"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="Poor"
+                     android:textColor="@color/silver"
+                     android:textSize="14sp"
+                     android:textStyle="bold" />
+
+             </RelativeLayout>
+
+             <RelativeLayout
+                 android:layout_width="133dp"
+                 android:layout_height="wrap_content"
+                 android:layout_alignParentRight="true"
+                 android:orientation="horizontal">
+                 <TextView
+                     android:id="@+id/textViewGood"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_centerInParent="true"
+                     android:text="Good"
+                     android:textColor="@color/spring_green"
+                     android:textSize="14sp"
+                     android:textStyle="bold" />
+             </RelativeLayout>
+         </RelativeLayout>
+         <RelativeLayout
+             android:id="@+id/TextViewMessage"
+             android:layout_below="@+id/TextViewScoreValue"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_margin="15dp"
+             android:padding="5dp"
+             android:orientation="horizontal">
+             <TextView
+                 android:id="@+id/textViewMessage"
+                 android:layout_centerInParent="true"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="You qualify for upto KES 50,000 Loans repayable in 3 Months"
+                 android:textColor="@color/blue_lagoon"
+                 android:textSize="14sp"
+                 android:textStyle="bold" />
+         </RelativeLayout>
+     </RelativeLayout>
+     <RelativeLayout
+     android:id="@+id/WalletLoanRequest"
+     android:layout_below="@+id/MyCreditScore"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_alignParentStart="true"
+     android:background="@color/zircon"
+     android:orientation="vertical"
+     android:layout_alignParentLeft="true">
+     <RelativeLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:background="@color/spring_green"
+         android:paddingTop="10dp"
+         android:paddingBottom="10dp"
+         android:orientation="horizontal" >
+         <Button
+             android:id="@+id/btnAddGoal"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:textSize="13sp"
+             android:text="@string/activity_wallet_request_for_loan_advance"
+             android:layout_marginRight="30dp"
+             android:layout_marginLeft="30dp"
+             android:textColor="@color/pure_white"
+             android:drawableRight="@drawable/ic_add_black_24dp"
+             android:background="@drawable/shapeloan"/>
+     </RelativeLayout>
+ </RelativeLayout>
+
+    </ScrollView>
+

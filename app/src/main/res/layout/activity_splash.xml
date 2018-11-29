@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/activity_splash_splashscreen_logo_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/activity_splash_textView_flexpay"
+            android:src="@drawable/logo_flexpay_splashscreen" />
+        <TextView
+            android:id="@+id/activity_splash_textView_flexpay"
+            style="@style/TextAppearance.AppCompat.Display1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/activity_splash_splashscreen_logo_img"
+            android:layout_centerHorizontal="true"
+            android:shadowColor="@color/blue_lagoon"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="1.0"
+            android:text="@string/app_name"
+            android:textColor="@color/blue_lagoon"
+            android:textSize="50sp"
+            android:textStyle="bold"
+            android:typeface="serif" />
+        <TextView
+            android:id="@+id/activity_splash_textView_lipia_pole_pole"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/activity_splash_textView_flexpay"
+            android:layout_below="@+id/activity_splash_textView_flexpay"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="1.0"
+            android:text="@string/activity_splash_screen_lipia_pole_pole"
+            android:textColor="@color/blue_lagoon"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            android:typeface="serif" />
+    </RelativeLayout>
+
+</FrameLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:override="true"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single" android:id="@+id/home">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_home"
+            android:title="Home" />
+    </group>
+    <group android:checkableBehavior="single" android:id="@+id/wallet">
+        <item
+            android:id="@+id/nav_wallet"
+            android:icon="@drawable/ic_menu_wallet"
+            android:title="Wallet" />
+    </group>
+    <group android:checkableBehavior="single" android:id="@+id/goals">
+        <item
+            android:id="@+id/nav_goals"
+            android:icon="@drawable/ic_menu_goals"
+            android:title="Goals" />
+    </group>
+    <group android:checkableBehavior="single" android:id="@+id/booking">
+        <item
+            android:id="@+id/nav_booking"
+            android:icon="@drawable/ic_menu_booking"
+            android:title="Booking" />
+    </group>
+    <group android:checkableBehavior="single" android:id="@+id/deals">
+        <item
+            android:id="@+id/nav_deals"
+            android:icon="@drawable/ic_menu_deals"
+            android:title="Deals" />
+    </group>
+    <item android:title="">
+        <menu>
+            <group android:checkableBehavior="single" android:id="@+id/profile">
+            <item
+                android:id="@+id/nav_profile"
+                android:icon="@drawable/ic_menu_profile"
+                android:title="Profile" />
+            </group>
+        </menu>
+    </item>
+
+</menu>

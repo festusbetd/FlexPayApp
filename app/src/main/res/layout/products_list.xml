@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginTop="8dp"
+    android:background="@color/pure_white"
+
+    android:paddingBottom="13dp">
+
+    <TextView
+        android:id="@+id/product_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="17dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="13dp"
+        android:text="@string/activity_product_list_product_name"
+        android:textColor="@color/blue_lagoon"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/product_attribute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/product_name"
+        android:layout_alignStart="@+id/product_name"
+        android:layout_below="@+id/product_name"
+        android:text="@string/activity_product_list_product_attribute" />
+
+    <TextView
+        android:id="@+id/flexpay_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/merchant_price"
+        android:layout_alignRight="@+id/merchant_price"
+        android:layout_alignTop="@+id/product_name"
+        android:text="flexpay_price"
+        android:textColor="@color/colorAccent" />
+
+    <TextView
+        android:id="@+id/merchant_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/flexpay_price"
+        android:layout_marginEnd="27dp"
+        android:layout_marginRight="27dp"
+        android:text="merchant price" />
+    <TextView
+        android:id="@+id/product_long_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/product_attribute"
+        android:layout_alignStart="@+id/product_attribute"
+        android:layout_below="@+id/product_attribute"
+        android:text="product long description" />
+
+</RelativeLayout>

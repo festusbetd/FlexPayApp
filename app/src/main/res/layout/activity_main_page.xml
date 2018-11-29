@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".Activities.LoginActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="0dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/regent_blue"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/logo_flexpay"/>
+                </LinearLayout>
+                <LinearLayout
+                android:id="@+id/activity_main_page_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/user_background"
+                android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/activity_main_page_text_view_welcome_to_flexpay"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/pure_white"
+                                android:layout_marginTop="5dp"
+                                android:textSize="24sp"
+                                android:alpha="0.56"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:text="@string/activity_login_welcome_to_flexPay" />
+
+                            <TextView
+                                android:id="@+id/activity_main_page_text_view_login_or_sign_up"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/pure_white"
+                                android:textSize="17sp"
+                                android:alpha="0.56"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:text="@string/activity_login_login_signup_to" />
+                            <TextView
+                                android:id="@+id/activity_main_page_text_view_getstarted"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/pure_white"
+                                android:textSize="17sp"
+                                android:alpha="0.56"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:text="@string/activity_login_get_started" />
+                </LinearLayout>
+
+        <Button
+            android:id="@+id/activity_main_page_button_signup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           android:layout_marginTop="-25dp"
+            android:layout_marginBottom="-25dp"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:alpha="0.86"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Get Started"
+            android:shadowColor="@android:color/transparent"
+            android:textColor="@color/pure_white"
+            android:background="@drawable/shapelogin" />
+ <!--   <Button
+        android:id="@+id/activity_main_page_button_signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginLeft="80dp"
+        android:textSize="18sp"
+        android:paddingLeft="30dp"
+       />-->
+
+    <LinearLayout
+        android:id="@+id/activity_main_page_layout_deals"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/activity_main_page_btn_get_started"
+        android:paddingBottom="40dp"
+        android:background="#49A4CA"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/activity_main_page_layout_deals_hot_or_new"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp">
+
+            <RelativeLayout
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_margin="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/activity_main_page_text_view_hot_deals"
+                    android:layout_width="133dp"
+                    android:layout_height="wrap_content"
+                    android:text="Hot Deals"
+                    android:textColor="@color/pure_white"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/activity_main_page_text_view_new_hot_deals"
+                    android:layout_width="133dp"
+                    android:layout_below="@+id/activity_main_page_text_view_hot_deals"
+                    android:layout_height="wrap_content"
+                    android:text="New blazing hot deals you can’t miss"
+                    android:textColor="@color/pure_white"
+                    android:alpha="0.6"
+                    android:textSize="14dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="163dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:id="@+id/activity_main_page_text_view_hot_deals_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hot Deals"
+                    android:textColor="@color/pure_white"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/activity_main_page_text_view_hot_browse_deals"
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/activity_main_page_text_view_hot_deals_details"
+                    android:layout_height="wrap_content"
+                    android:text="Browse Deals by Industry or category"
+                    android:textStyle="bold"
+                    android:textColor="@color/pure_white"
+                    android:alpha="0.6"
+                    android:textSize="14dp" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/activity_main_page_view_line"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/activity_main_page_layout_deals_hot_or_new"
+            android:orientation="horizontal"
+            android:paddingLeft="5dp">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@android:color/darker_gray"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:clipToPadding="false"
+        android:layout_marginTop="-30dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.v7.widget.CardView
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="left">
+                <TextView
+                    android:id="@+id/activity_main_page_lg_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="18dp"
+                    android:textColor="@color/blue_lagoon"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="LG 55” TV"/>
+                <TextView
+                    android:id="@+id/activity_main_page_lg_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="139,000"
+                    android:textSize="26dp"
+                    android:textStyle="bold"
+                    android:padding="5dp"
+                    android:textColor="@color/blue_lagoon"/>
+                <TextView
+                    android:id="@+id/activity_main_page_lg_book_now"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Book now with only"
+                    android:textSize="12dp"
+                    android:padding="5dp"
+                    android:textColor="#49A4CA"/>
+                <TextView
+                    android:id="@+id/activity_main_page_lg_book_now2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="kes 3,000"
+                    android:textSize="12dp"
+                    android:padding="5dp"
+                    android:textColor="#49A4CA"/>
+                <Button
+                    android:id="@+id/activity_main_page_lg_reserve_now"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:padding="5dp"
+                    android:text="Reserve Now"
+                    android:textStyle="bold"
+                    android:shadowColor="@android:color/transparent"
+                    android:textColor="@color/pure_white"
+                    android:drawableRight="@drawable/ic_keyboard_arrow_right_pure_white_24dp"
+                    android:background="@drawable/shapegoal"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="right">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:id="@+id/activity_main_page_lg_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/tvimg_2"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+  </LinearLayout>
+        <LinearLayout
+            android:clipToPadding="false"
+            android:layout_marginTop="-30dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <android.support.v7.widget.CardView
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="left">
+                    <TextView
+                        android:id="@+id/activity_main_page_sony_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="18dp"
+                        android:textColor="@color/blue_lagoon"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:text="SONY 51” TV"/>
+                    <TextView
+                        android:id="@+id/activity_main_page_sony_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="115,000"
+                        android:textSize="26dp"
+                        android:textStyle="bold"
+                        android:padding="5dp"
+                        android:textColor="@color/blue_lagoon"/>
+                    <TextView
+                        android:id="@+id/activity_main_page_sony_book_now"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="Book now with only"
+                        android:textSize="12dp"
+                        android:padding="5dp"
+                        android:textColor="#49A4CA"/>
+                    <TextView
+                        android:id="@+id/activity_main_page_sony_book_now2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="kes 2,000"
+                        android:textSize="12dp"
+                        android:padding="5dp"
+                        android:textColor="#49A4CA"/>
+                    <Button
+                        android:id="@+id/activity_main_page_sony_reserve_now"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:padding="5dp"
+                        android:text="Reserve Now"
+                        android:textStyle="bold"
+                        android:shadowColor="@android:color/transparent"
+                        android:textColor="@color/pure_white"
+                        android:drawableRight="@drawable/ic_keyboard_arrow_right_pure_white_24dp"
+                        android:background="@drawable/shapegoal"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="right">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/tvimg_2"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+     <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            />
+    </LinearLayout>
+
+</ScrollView>
