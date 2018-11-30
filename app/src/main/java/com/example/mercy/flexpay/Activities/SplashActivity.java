@@ -71,7 +71,7 @@ public class SplashActivity extends AppCompatActivity {
             public void onAnimationEnd(Animation arg0) {
 
                 Intent intent = new Intent(getApplicationContext(),
-                        LoginActivity.class);
+                        MainPage.class);
                 startActivity(intent);
                 finish();
             }

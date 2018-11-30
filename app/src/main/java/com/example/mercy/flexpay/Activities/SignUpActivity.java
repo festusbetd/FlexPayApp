@@ -65,7 +65,7 @@ public class SignUpActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up_2);
+        setContentView(R.layout.activity_sign_up);
 
         progressDialog = new ProgressDialog(this);
 
@@ -77,6 +77,7 @@ public class SignUpActivity extends AppCompatActivity {
         editTextLast = (EditText) findViewById(R.id.editTextLast);
         editTextPassword = (EditText) findViewById(R.id.editTextPassword);
         editTextConfirm_password = (EditText) findViewById(R.id.editTextConfirm_password);
+        terms=  findViewById(R.id.termsCheck);
 
         buttonSignup = (Button) findViewById(R.id.buttonSignup);
       // Font path
@@ -85,7 +86,7 @@ public class SignUpActivity extends AppCompatActivity {
         // Loading Font Face
         Typeface tf = Typeface.createFromAsset(getAssets(), fontPath);
         Typeface sf = Typeface.createFromAsset(getAssets(), sansPath);
-        // Applying font
+       /* // Applying font
         editTextPhone.setTypeface(tf);
         editTextEmail.setTypeface(tf);
         editTextUsername.setTypeface(tf);
@@ -95,7 +96,7 @@ public class SignUpActivity extends AppCompatActivity {
         editTextPassword.setTypeface(tf);
         editTextConfirm_password.setTypeface(tf);
         terms = findViewById(R.id.termsCheck);
-
+*/
         buttonSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -120,16 +121,16 @@ public class SignUpActivity extends AppCompatActivity {
                 editor.putString("reg_confirm_password", confirm_password);
 
                 editor.apply();
-
+                 if (TextUtils.isEmpty(phone_number_1) || phone_number_1.length() < 13) {
+                    editTextPhone.setError("Enter a valid Phone number");
+                    editTextPhone.requestFocus();
+                    return;
+                }
                 if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
                     editTextEmail.setError("Enter a valid email");
                     editTextEmail.requestFocus();
                     return;
-                } else if (TextUtils.isEmpty(phone_number_1) || phone_number_1.length() < 10) {
-                    editTextPhone.setError("Please enter a valid Phone number");
-                    editTextPhone.requestFocus();
-                    return;
-                }  else if (TextUtils.isEmpty(username)) {
+                }   else if (TextUtils.isEmpty(username)) {
                     editTextUsername.setError("Please enter username");
                     editTextUsername.requestFocus();
                     return;
@@ -302,16 +303,16 @@ public class SignUpActivity extends AppCompatActivity {
                 progressDialog.dismiss();
                 if (response.isSuccessful()) {
                     if (response.body() != null) {
-                    Snackbar snackbar = Snackbar.make(linearLayout,"Registration Successful",Snackbar.LENGTH_INDEFINITE)
+                  /*  Snackbar snackbar = Snackbar.make(linearLayout,"Registration Successful",Snackbar.LENGTH_INDEFINITE)
                             .setAction("Login", new View.OnClickListener() {
                                 @Override
                                 public void onClick(View view) {
                                     Intent intent = new Intent(SignUpActivity.this,LoginActivity.class);
                                 }
-                            });
+                            });*/
 
-                       /* Intent intentDashboard = new Intent(getApplicationContext(),DashboardActivity.class);
-                        startActivity(intentDashboard);*/
+                       Intent intentDashboard = new Intent(getApplicationContext(),DashboardActivity.class);
+                        startActivity(intentDashboard);
                     }
 
                 }

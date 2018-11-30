@@ -59,7 +59,7 @@ public class DashboardActivity extends AppCompatActivity
 
         // Spinner Drop down elements
         List<String> categories = new ArrayList<String>();
-        categories.add("uskys Deals poa");
+        categories.add("Tuskys Deals poa");
         categories.add("Flex Travel");
         categories.add("Jenga pole pole");
         categories.add("Buy motor vehicle");
@@ -183,6 +183,7 @@ public class DashboardActivity extends AppCompatActivity
             startActivity(dealsIntent);
             return true;
         }
+
       /*  else if (id == R.id.nav_settings) {
             AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
             builder.setTitle("Error");
@@ -192,12 +193,9 @@ public class DashboardActivity extends AppCompatActivity
             dialog.show();
             return true;
         }*/
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-
 
 }

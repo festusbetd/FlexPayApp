@@ -10,8 +10,7 @@ import android.widget.TextView;
 import com.example.mercy.flexpay.R;
 
 public class MainPage extends AppCompatActivity {
-
-     private LinearLayoutManager layoutManager;
+     //private LinearLayoutManager layoutManager;
      private TextView activityMainPageTextViewGetStarted;
      private Button activityMainPageButtonLgReserveNow;
      private Button activityMainPageButtonSonyReserveNow;
@@ -21,7 +20,7 @@ public class MainPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
 
-        activityMainPageTextViewGetStarted = findViewById(R.id.activity_main_page_text_view_getstarted);
+        activityMainPageTextViewGetStarted = findViewById(R.id.activity_main_page_button_get_started);
         activityMainPageButtonLgReserveNow = findViewById(R.id.activity_main_page_lg_reserve_now);
         activityMainPageButtonSonyReserveNow = findViewById(R.id.activity_main_page_sony_reserve_now);
 

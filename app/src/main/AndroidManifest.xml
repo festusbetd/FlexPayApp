@@ -21,10 +21,7 @@
         <activity
             android:name=".Activities.SplashActivity"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
         <activity android:name=".Activities.AccountManagementActivity" />
         <activity android:name=".Activities.LoginActivity" />
@@ -33,7 +30,10 @@
             android:name=".Activities.DashboardActivity"
             android:label="@string/title_activity_dashboard"
             android:theme="@style/AppTheme" >
-
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".Activities.walletActivity" />
         <activity android:name=".Activities.GoalsActivity" />

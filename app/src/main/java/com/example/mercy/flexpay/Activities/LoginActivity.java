@@ -1,5 +1,6 @@
 package com.example.mercy.flexpay.Activities;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -66,7 +67,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_login_2);
 
         linearLayout = findViewById(R.id.linearlayout);
         editTextLoginEmail = findViewById(R.id.editTextLoginPhone);
@@ -166,7 +167,14 @@ public class LoginActivity extends AppCompatActivity {
                     }
 
                 } else if (response.code() >= 400 && response.code() < 599) {
-                    Snackbar snackbar = Snackbar
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
+                    builder.setTitle("Error");
+                    builder.setMessage("Wrong username or password");
+                    builder.setNegativeButton("OK", null);
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
+
+                    /*Snackbar snackbar = Snackbar
                             .make(linearLayout, "Wrong username or password", Snackbar.LENGTH_INDEFINITE)
                             .setAction("RETRY", new View.OnClickListener() {
                                 @Override
@@ -176,7 +184,7 @@ public class LoginActivity extends AppCompatActivity {
                                 }
                             });
 
-                    snackbar.show();
+                    snackbar.show();*/
                 } else {
                     Snackbar snackbar = Snackbar
                             .make(linearLayout, "Something went wrong", Snackbar.LENGTH_INDEFINITE)
