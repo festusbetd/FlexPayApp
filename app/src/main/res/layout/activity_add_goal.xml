@@ -121,7 +121,6 @@
             android:layout_weight="0.5"
             android:layout_gravity="right"
             android:textColorHint="@color/blue_lagoon"
-            android:inputType="datetime"
             android:padding="15dp"
             android:textSize="14sp" />
 
@@ -133,7 +132,6 @@
             android:layout_weight="0.5"
             android:drawablePadding="10dp"
             android:textColorHint="@color/blue_lagoon"
-            android:inputType="date"
             android:padding="15dp"
             android:textSize="14sp" />
 

@@ -179,7 +179,9 @@ public class DashboardActivity extends AppCompatActivity
             return true;
         }
         else if (id == R.id.nav_deals) {
-            Toast.makeText(this, "DealsClicked", Toast.LENGTH_SHORT).show();
+            Intent dealsIntent = new Intent(getApplicationContext(),DealsActivity.class);
+            startActivity(dealsIntent);
+            return true;
         }
         else if (id == R.id.nav_profile) {
             Intent dealsIntent = new Intent(getApplicationContext(),ProfileActivity.class);
