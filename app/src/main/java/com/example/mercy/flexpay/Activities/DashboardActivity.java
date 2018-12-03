@@ -27,6 +27,7 @@ public class DashboardActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private Button getStartedButton;
+    private Button viewDealsButton;
     private Button setGoalsButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +35,16 @@ public class DashboardActivity extends AppCompatActivity
         setContentView(R.layout.activity_dashboard);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
+        viewDealsButton = findViewById(R.id.activity_dashboard_btn_view_deals);
         getStartedButton = findViewById(R.id.activity_content_btnAddGoals);
         setGoalsButton = findViewById(R.id.activity_dashboard_btn_setup_goals);
+        viewDealsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),DealsActivity.class);
+                startActivity(intent);
+            }
+        });
         setGoalsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,7 +65,6 @@ public class DashboardActivity extends AppCompatActivity
        // jsoncall();
         // Spinner element
         Spinner spinner =  findViewById(R.id.spinner);
-
         // Spinner Drop down elements
         List<String> categories = new ArrayList<String>();
         categories.add("Tuskys Deals poa");
@@ -66,19 +74,14 @@ public class DashboardActivity extends AppCompatActivity
 
         // Creating adapter for spinner
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
-
         // Drop down layout style - list view with radio button
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-
         // attaching data adapter to spinner
         spinner.setAdapter(dataAdapter);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
                 String item = parent.getItemAtPosition(position).toString();
-
                 Toast.makeText(parent.getContext(), "Selected" + item, Toast.LENGTH_LONG).show();
             }
 
@@ -183,7 +186,6 @@ public class DashboardActivity extends AppCompatActivity
             startActivity(dealsIntent);
             return true;
         }
-
       /*  else if (id == R.id.nav_settings) {
             AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
             builder.setTitle("Error");
@@ -193,9 +195,11 @@ public class DashboardActivity extends AppCompatActivity
             dialog.show();
             return true;
         }*/
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+
     }
 
 }

@@ -27,4 +27,12 @@
         <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
         <item name="colorControlActivated">@color/blue_lagoon</item>
     </style>
+
+
+    <style name="Spinner">
+        <!-- Used for the bottom line when not selected / focused -->
+        <item name="colorControlNormal">@color/blue_lagoon</item>
+        <item name="colorControlActivated">@color/colorPrimary</item>
+        <!-- colorControlActivated & colorControlHighlight use the colorAccent          color by default -->
+    </style>
 </resources>

@@ -121,4 +121,5 @@
     <string name="activity_wallet_arrow_wallet1">Wallet</string>
     <string name="activity_deals_arrow_deals">> Deals</string>
     <string name="activity_goals_from_date">From Date</string>
+    <string name="activity_deals_toolbar">Deals</string>
 </resources>

@@ -121,7 +121,7 @@ public class SignUpActivity extends AppCompatActivity {
                 editor.putString("reg_confirm_password", confirm_password);
 
                 editor.apply();
-                 if (TextUtils.isEmpty(phone_number_1) || phone_number_1.length() < 13) {
+                 if (TextUtils.isEmpty(phone_number_1) || phone_number_1.length() < 12) {
                     editTextPhone.setError("Enter a valid Phone number");
                     editTextPhone.requestFocus();
                     return;

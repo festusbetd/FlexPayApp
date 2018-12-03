@@ -1,103 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-    android:orientation="vertical"
-        tools:context=".Activities.DealsActivity"
-        >
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".Activities.DealsActivity">
     <LinearLayout
-        android:id="@+id/deals_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:orientation="horizontal">
-        <TextView
-            android:id="@+id/time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/activity_wallet_home"
-            android:textColor="@color/blue_lagoon"
-            android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
-            android:textStyle="bold"
-            android:textSize="23sp" />
-        <TextView
-            android:id="@+id/goals"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="@string/activity_wallet_arrow_wallet1"
-            android:textSize="18sp"/>
+        android:orientation="vertical"
+        android:padding="0dp">
 
-
-    </LinearLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="@android:color/darker_gray"/>
-<!--
-    <View
-        android:layout_below="@+id/wallet_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/darker_gray"/>-->
-
-    <LinearLayout
-        android:id="@+id/activity_dashboard_dashboad_dealsFilter"
-        android:layout_below="@+id/deals_title"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="0dp"
-        android:background="@color/regent_blue"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:paddingTop="10dp"
-        android:paddingBottom="20dp">
-        <Spinner
-            android:spinnerMode="dropdown"
-            android:id="@+id/spinner"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_weight="1"
-            android:drawableRight="@drawable/ic_arrow_drop_down_black_24dp"
-            android:padding="10dp"
-            android:textSize="14sp"
-            />
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="@android:color/darker_gray"/>
-        <Spinner
-            android:spinnerMode="dropdown"
-            android:id="@+id/spinnerProductsTypes"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="5dp"
-            android:layout_weight="1"
-            android:drawableRight="@drawable/ic_arrow_drop_down_black_24dp"
-            android:padding="10dp"
-            android:textSize="14sp"
-            />
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/activity_dashboard_dashboad_dealsFilter2"
-        android:layout_below="@+id/activity_dashboard_dashboad_dealsFilter"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="0dp"
-        android:background="@color/regent_blue"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:paddingTop="10dp"
-        android:paddingBottom="20dp">
         <LinearLayout
+            android:id="@+id/deals_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_wallet_home"
+                android:textColor="@color/blue_lagoon"
+                android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+                android:textStyle="bold"
+                android:textSize="23sp" />
+            <TextView
+                android:id="@+id/goals"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="@string/activity_deals_toolbar"
+                android:textSize="18sp"/>
+
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/darker_gray"/>
+
+        <View
+            android:layout_below="@+id/wallet_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"/>
+
+        <LinearLayout
+            android:id="@+id/activity_dashboard_dashboad_dealsFilter"
+            android:layout_below="@+id/deals_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:background="@color/regent_blue"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="20dp">
+            <Spinner
+                android:spinnerMode="dropdown"
+                android:id="@+id/spinner"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:drawableRight="@drawable/ic_arrow_drop_down_black_24dp"
+                android:padding="10dp"
+                android:textSize="14sp"
+                />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/darker_gray"/>
+            <Spinner
+                android:spinnerMode="dropdown"
+                android:id="@+id/spinnerProductsTypes"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:drawableRight="@drawable/ic_arrow_drop_down_black_24dp"
+                android:padding="10dp"
+                android:textSize="14sp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:clipToPadding="false"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -185,6 +177,8 @@
 
         </LinearLayout>
         <LinearLayout
+            android:clipToPadding="false"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -268,8 +262,94 @@
 
                 </LinearLayout>
             </android.support.v7.widget.CardView>
+        </LinearLayout>
+        <LinearLayout
+            android:clipToPadding="false"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <android.support.v7.widget.CardView
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="left">
+                    <TextView
+                        android:id="@+id/activity_main_page_sony_details1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="18dp"
+                        android:textColor="@color/blue_lagoon"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:text="SONY 51” TV"/>
+                    <TextView
+                        android:id="@+id/activity_main_page_sony_price1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="115,000"
+                        android:textSize="26dp"
+                        android:textStyle="bold"
+                        android:padding="5dp"
+                        android:textColor="@color/blue_lagoon"/>
+                    <TextView
+                        android:id="@+id/activity_main_page_sony_book_now1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="Book now with only"
+                        android:textSize="12dp"
+                        android:padding="5dp"
+                        android:textColor="#49A4CA"/>
+                    <TextView
+                        android:id="@+id/activity_main_page_sony_book_now21"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="kes 2,000"
+                        android:textSize="12dp"
+                        android:padding="5dp"
+                        android:textColor="#49A4CA"/>
+                    <Button
+                        android:id="@+id/activity_main_page_sony_reserve_now1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:padding="5dp"
+                        android:text="Reserve Now"
+                        android:textStyle="bold"
+                        android:shadowColor="@android:color/transparent"
+                        android:textColor="@color/pure_white"
+                        android:drawableRight="@drawable/ic_keyboard_arrow_right_pure_white_24dp"
+                        android:background="@drawable/shapegoal"/>
+                </LinearLayout>
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="right">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/tvimg_2"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
         </LinearLayout>
     </LinearLayout>
 
-</RelativeLayout>
+</ScrollView>

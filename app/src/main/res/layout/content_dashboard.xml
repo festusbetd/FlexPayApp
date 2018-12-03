@@ -202,14 +202,14 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <android.support.v7.widget.RecyclerView
+      <!--  <android.support.v7.widget.RecyclerView
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
             android:id="@+id/products_rv"
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-        </android.support.v7.widget.RecyclerView>
+        </android.support.v7.widget.RecyclerView>-->
     </LinearLayout>
     <RelativeLayout
         android:id="@+id/activity_dashboard_dasboard_add_goals"

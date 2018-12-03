@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="countries">
-        <item>Kenya</item>
+    <string-array name="spinner_item">
+        <item>All</item>
+        <item>Open</item>
+        <item>Closed</item>
     </string-array>
 </resources>
