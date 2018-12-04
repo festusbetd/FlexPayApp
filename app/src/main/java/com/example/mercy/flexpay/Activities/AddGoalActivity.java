@@ -5,10 +5,12 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.mercy.flexpay.R;
 
@@ -16,7 +18,10 @@ import java.util.Calendar;
 
 public class AddGoalActivity extends AppCompatActivity implements View.OnClickListener {
     private int mYear, mMonth, mDay;
-    EditText txtDate,txtDate2;
+    private  EditText txtDate,txtDate2;
+    private  EditText editTextAddGoalName,editTextEnterDescription;
+    private  String goalName,goalDescription;
+    private  Button btnAddGoal;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,10 +30,16 @@ public class AddGoalActivity extends AppCompatActivity implements View.OnClickLi
         mToolbar.setTitle(getString(R.string.app_name_add_goals));
         mToolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
 
-        txtDate=(EditText)findViewById(R.id.in_date);
-        txtDate2=(EditText)findViewById(R.id.in_date2);
+        editTextAddGoalName = findViewById(R.id.activity_add_goal_add_trip);
+        editTextEnterDescription = findViewById(R.id.activity_add_goal_field_active_goals);
+        btnAddGoal = findViewById(R.id.activity_add_goal_btn_add_goal);
+        txtDate=findViewById(R.id.in_date);
+        txtDate2=findViewById(R.id.in_date2);
+
+
         txtDate.setOnClickListener(this);
         txtDate2.setOnClickListener(this);
+
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -36,7 +47,33 @@ public class AddGoalActivity extends AppCompatActivity implements View.OnClickLi
                 finish();
             }
         });
+            btnAddGoal.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    goalName = editTextAddGoalName.getText().toString().trim();
+                    goalDescription = editTextEnterDescription.getText().toString().trim();
 
+                    if (TextUtils.isEmpty(goalName) ){
+                        editTextAddGoalName.setError("Enter a Goal Name");
+                        editTextAddGoalName.requestFocus();
+                        return;
+                    }
+                    if (TextUtils.isEmpty(goalDescription)) {
+                        editTextEnterDescription.setError("Enter a Goal Description");
+                        editTextEnterDescription.requestFocus();
+                        return;
+
+                    }
+                    else {
+                        proceedToAddGoal();
+                    }
+                }
+            });
+
+    }
+
+    private void proceedToAddGoal() {
+        Toast.makeText(this, "Proceed To add Goal", Toast.LENGTH_SHORT).show();
     }
 
     @Override

@@ -22,12 +22,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.example.mercy.flexpay.Api.APIService;
 import com.example.mercy.flexpay.Api.APIUrl;
 import com.example.mercy.flexpay.Model.AuthUser;
@@ -69,7 +63,10 @@ public class SignUpActivity extends AppCompatActivity {
 
         progressDialog = new ProgressDialog(this);
 
-        linearLayout = (LinearLayout) findViewById(R.id.linearlayout);
+        linearLayout = (LinearLayout) findViewById(R.id.activity_sign_up_linearlayout);
+
+
+
         editTextPhone = (EditText) findViewById(R.id.editTextPhone);
         editTextEmail = (EditText) findViewById(R.id.editTextEmail);
         editTextUsername = (EditText) findViewById(R.id.editTextUsername);
@@ -86,7 +83,7 @@ public class SignUpActivity extends AppCompatActivity {
         // Loading Font Face
         Typeface tf = Typeface.createFromAsset(getAssets(), fontPath);
         Typeface sf = Typeface.createFromAsset(getAssets(), sansPath);
-       /* // Applying font
+        // Applying font
         editTextPhone.setTypeface(tf);
         editTextEmail.setTypeface(tf);
         editTextUsername.setTypeface(tf);
@@ -95,8 +92,9 @@ public class SignUpActivity extends AppCompatActivity {
         editTextEmail.setTypeface(tf);
         editTextPassword.setTypeface(tf);
         editTextConfirm_password.setTypeface(tf);
+
         terms = findViewById(R.id.termsCheck);
-*/
+
         buttonSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -112,13 +110,13 @@ public class SignUpActivity extends AppCompatActivity {
                      password = editTextPassword.getText().toString();
                      confirm_password = editTextConfirm_password.getText().toString();
 
-                editor.putString("reg_email", email);
+             /*   editor.putString("reg_email", email);
                 editor.putString("reg_phone", phone_number_1);
                 editor.putString("reg_username", username);
                 editor.putString("reg_fname", first_name);
                 editor.putString("reg_lname", last_name);
                 editor.putString("reg_password", password);
-                editor.putString("reg_confirm_password", confirm_password);
+                editor.putString("reg_confirm_password", confirm_password);*/
 
                 editor.apply();
                  if (TextUtils.isEmpty(phone_number_1) || phone_number_1.length() < 12) {
@@ -166,7 +164,16 @@ public class SignUpActivity extends AppCompatActivity {
                     return;
                 }
                 else if (!isNetworkConnected()) {
-                    Snackbar snackbar = Snackbar
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(SignUpActivity.this);
+                    builder.setTitle("Error");
+                    builder.setMessage("No Internet");
+                    builder.setNegativeButton("OK", null);
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
+
+
+                    /*Snackbar snackbar = Snackbar
                             .make(linearLayout, "No Internet", Snackbar.LENGTH_INDEFINITE)
                             .setAction("RETRY", new View.OnClickListener() {
                                 @Override
@@ -174,7 +181,7 @@ public class SignUpActivity extends AppCompatActivity {
                                     registerUser();
                                 }
                             });
-                    snackbar.show();
+                    snackbar.show();*/
 
                 }
                else if(terms.isChecked()){
@@ -319,6 +326,7 @@ public class SignUpActivity extends AppCompatActivity {
 
 
                 else {
+
                     Snackbar snackbar = Snackbar
                             .make(linearLayout, "Username or Phone Number Exists", Snackbar.LENGTH_INDEFINITE)
                             .setAction("RETRY", new View.OnClickListener() {
@@ -331,7 +339,6 @@ public class SignUpActivity extends AppCompatActivity {
                     snackbar.show();
                 }
             }
-
             @Override
             public void onFailure(Call<AuthUser> call, Throwable t) {
                 progressDialog.dismiss();
@@ -341,7 +348,6 @@ public class SignUpActivity extends AppCompatActivity {
                             public void onClick(View v) {
                             }
                         });
-
                 snackbar.show();
 
             }

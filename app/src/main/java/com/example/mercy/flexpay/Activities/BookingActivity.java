@@ -22,9 +22,8 @@ public class BookingActivity extends AppCompatActivity implements AdapterView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking);
 
-        spinner_status = findViewById(R.id.activity_booking_spinner_status);
-        spinner_show = findViewById(R.id.activity_booking_spinner_status);
-
+        spinner_status = findViewById(R.id.activity_booking_spinner_show);
+        spinner_show = findViewById(R.id.activity_booking_spinner_show);
 
         Toolbar mToolbar = (Toolbar) findViewById(R.id.activity_booking_toolbar);
         mToolbar.setTitle(getString(R.string.app_name_booking));
@@ -38,18 +37,58 @@ public class BookingActivity extends AppCompatActivity implements AdapterView.On
             }
         });
 
-        spinner_status.setOnItemClickListener(this);
-        List<String>  status = new ArrayList<String>();
-        status.add("Open");
-        status.add("Open");
+        // Spinner Drop down elements
+        List<String> categories = new ArrayList<String>();
+        categories.add("Open");
+        categories.add("Closed");
+
         // Creating adapter for spinner
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, status);
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
         // Drop down layout style - list view with radio button
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // attaching data adapter to spinner
         spinner_status.setAdapter(dataAdapter);
+        spinner_status.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String item = parent.getItemAtPosition(position).toString();
+                Toast.makeText(parent.getContext(), "Selected" + item, Toast.LENGTH_LONG).show();
+            }
 
-        spinner_show.setOnItemClickListener(this);
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        // Spinner Drop down elements
+        List<String> products_types = new ArrayList<String>();
+        products_types.add("10");
+        products_types.add("20");
+        products_types.add("30");
+        // Creating adapter for spinner
+        ArrayAdapter<String> dataAdapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, products_types);
+
+        // Drop down layout style - list view with radio button
+        dataAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        // attaching data adapter to spinner
+        spinner_status.setAdapter(dataAdapter2);
+        spinner_status.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                String item = parent.getItemAtPosition(position).toString();
+
+                Toast.makeText(parent.getContext(), "Selected" + item, Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
 
         List<String> status_show = new ArrayList<String>();
         status_show.add("10");

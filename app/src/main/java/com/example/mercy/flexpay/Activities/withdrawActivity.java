@@ -39,7 +39,7 @@ public class withdrawActivity extends AppCompatActivity {
                 edit_text_withdraw_number.requestFocus();
             }
             else if(withdraw_no.length()<10){
-                edit_text_withdraw_number.setError("Atleast 6 characters");
+                edit_text_withdraw_number.setError("Atleast 10 characters");
             }
             else{
                 proceesWithdraw();
@@ -49,6 +49,7 @@ public class withdrawActivity extends AppCompatActivity {
     }
 
     private void proceesWithdraw() {
+
         Toast.makeText(this, "Allow payments", Toast.LENGTH_SHORT).show();
     }
 }

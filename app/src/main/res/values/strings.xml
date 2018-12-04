@@ -99,7 +99,7 @@
     <string name="activity_wallet_request_for_loan_advance">Request for loan/ Advance</string>
     <string name="activity_wallet_home_text">Home</string>
     <string name="activity_withdraw_arrow_withdraw">Wallet</string>
-    <string name="activity_withdraw_home_text">Home</string>
+    <string name="activity_withdraw_home_text">Home ></string>
     <string name="activity_withdraw_arrow_withdraw_withdraw2"><![CDATA[> Withdraw]]></string>
     <string name="activity_withdraw_wallet_balance">Wallet Balance</string>
     <string name="activity_withdraw_available_balance">Available Balance</string>

@@ -203,10 +203,10 @@
         android:textStyle="bold"
         android:textSize="14sp" />
 
-        <Spinner
+      <!--  <Spinner
             android:id="@+id/activity_booking_spinner_status"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content" />-->
 
 
    <!-- <TextView
@@ -219,11 +219,8 @@
         android:text="@string/activity_booking_overdue_status_text"
         android:textSize="10sp"
         />-->
-        <Spinner
-            android:id="@+id/activity_booking_spinner_show"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-   <!-- <TextView
+
+    <TextView
         android:id="@+id/activity_booking_booking_amount_goal_show"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -231,7 +228,11 @@
         android:layout_weight="1"
         android:text="@string/activity_booking_show_text"
         android:textSize="10sp"
-        />-->
+        />
+        <Spinner
+            android:id="@+id/activity_booking_spinner_show"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 </LinearLayout>
 
     <LinearLayout

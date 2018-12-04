@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     tools:context=".Activities.DealsActivity">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/activity_deals_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark" />
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,7 +29,7 @@
             android:layout_margin="10dp"
             android:orientation="horizontal">
             <TextView
-                android:id="@+id/time"
+                android:id="@+id/text_view_activity_deals_home"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/activity_wallet_home"
@@ -27,14 +38,12 @@
                 android:textStyle="bold"
                 android:textSize="23sp" />
             <TextView
-                android:id="@+id/goals"
+                android:id="@+id/textView_deals_toolbar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
                 android:text="@string/activity_deals_toolbar"
                 android:textSize="18sp"/>
-
-
         </LinearLayout>
         <View
             android:layout_width="match_parent"
@@ -48,7 +57,7 @@
             android:background="@android:color/darker_gray"/>
 
         <LinearLayout
-            android:id="@+id/activity_dashboard_dashboad_dealsFilter"
+            android:id="@+id/activity_deals_dealsFilter"
             android:layout_below="@+id/deals_title"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -77,7 +86,7 @@
                 android:background="@android:color/darker_gray"/>
             <Spinner
                 android:spinnerMode="dropdown"
-                android:id="@+id/spinnerProductsTypes"
+                android:id="@+id/spinner_deals_products_types"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
@@ -92,7 +101,8 @@
             android:layout_marginTop="10dp"
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            >
             <android.support.v7.widget.CardView
                 android:foreground="?android:attr/selectableItemBackground"
                 android:clickable="true"
@@ -103,9 +113,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
+                    android:layout_margin="10dp"
                     android:gravity="left">
                     <TextView
-                        android:id="@+id/activity_main_page_lg_details"
+                        android:id="@+id/activity_deals_page_lg_details"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
@@ -115,9 +126,10 @@
                         android:layout_marginTop="10dp"
                         android:text="LG 55” TV"/>
                     <TextView
-                        android:id="@+id/activity_main_page_lg_price"
+                        android:id="@+id/activity_deals_page_lg_price"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
                         android:layout_marginLeft="5dp"
                         android:text="139,000"
                         android:textSize="26dp"
@@ -125,7 +137,7 @@
                         android:padding="5dp"
                         android:textColor="@color/blue_lagoon"/>
                     <TextView
-                        android:id="@+id/activity_main_page_lg_book_now"
+                        android:id="@+id/activity_deals_page_lg_book_now"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
@@ -134,7 +146,7 @@
                         android:padding="5dp"
                         android:textColor="#49A4CA"/>
                     <TextView
-                        android:id="@+id/activity_main_page_lg_book_now2"
+                        android:id="@+id/activity_deals_page_lg_book_now2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
@@ -143,17 +155,21 @@
                         android:padding="5dp"
                         android:textColor="#49A4CA"/>
                     <Button
-                        android:id="@+id/activity_main_page_lg_reserve_now"
+                        android:id="@+id/activity_deals_page_lg_reserve_now"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="18sp"
-                        android:padding="5dp"
+                        android:textSize="16sp"
+                        android:padding="10dp"
                         android:text="Reserve Now"
                         android:textStyle="bold"
                         android:shadowColor="@android:color/transparent"
                         android:textColor="@color/pure_white"
                         android:drawableRight="@drawable/ic_keyboard_arrow_right_pure_white_24dp"
                         android:background="@drawable/shapegoal"/>
+                    <EditText
+                        android:id="@+id/editTextLg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -192,9 +208,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
+                    android:layout_margin="10dp"
                     android:gravity="left">
                     <TextView
-                        android:id="@+id/activity_main_page_sony_details"
+                        android:id="@+id/activity_deasls_page_sony_details"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
@@ -214,7 +231,7 @@
                         android:padding="5dp"
                         android:textColor="@color/blue_lagoon"/>
                     <TextView
-                        android:id="@+id/activity_main_page_sony_book_now"
+                        android:id="@+id/textView_activity_deals_page_sony_book_now"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
@@ -223,7 +240,7 @@
                         android:padding="5dp"
                         android:textColor="#49A4CA"/>
                     <TextView
-                        android:id="@+id/activity_main_page_sony_book_now2"
+                        android:id="@+id/activity_main_page_sony_book_now"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
@@ -236,13 +253,18 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="16sp"
-                        android:padding="5dp"
+                        android:padding="10dp"
                         android:text="Reserve Now"
                         android:textStyle="bold"
                         android:shadowColor="@android:color/transparent"
                         android:textColor="@color/pure_white"
                         android:drawableRight="@drawable/ic_keyboard_arrow_right_pure_white_24dp"
                         android:background="@drawable/shapegoal"/>
+                    <EditText
+                        android:id="@+id/editTextResultSony"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -279,9 +301,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
+                    android:layout_margin="10dp"
                     android:gravity="left">
                     <TextView
-                        android:id="@+id/activity_main_page_sony_details1"
+                        android:id="@+id/textView_activity_deals_page_sony_details1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
@@ -291,7 +314,7 @@
                         android:layout_marginTop="10dp"
                         android:text="SONY 51” TV"/>
                     <TextView
-                        android:id="@+id/activity_main_page_sony_price1"
+                        android:id="@+id/textView_activity_deals_page_sony_price1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
@@ -301,7 +324,7 @@
                         android:padding="5dp"
                         android:textColor="@color/blue_lagoon"/>
                     <TextView
-                        android:id="@+id/activity_main_page_sony_book_now1"
+                        android:id="@+id/textView_activity_deals_page_sony_book_now1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
@@ -330,6 +353,10 @@
                         android:textColor="@color/pure_white"
                         android:drawableRight="@drawable/ic_keyboard_arrow_right_pure_white_24dp"
                         android:background="@drawable/shapegoal"/>
+                    <EditText
+                        android:id="@+id/editTextOther"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -353,3 +380,4 @@
     </LinearLayout>
 
 </ScrollView>
+</LinearLayout>
