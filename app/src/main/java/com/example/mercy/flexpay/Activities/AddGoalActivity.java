@@ -73,6 +73,7 @@ public class AddGoalActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     private void proceedToAddGoal() {
+
         Toast.makeText(this, "Proceed To add Goal", Toast.LENGTH_SHORT).show();
     }
 

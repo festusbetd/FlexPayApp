@@ -23,7 +23,6 @@
             android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
-        <activity android:name=".Activities.AccountManagementActivity" />
         <activity android:name=".Activities.LoginActivity" />
         <activity android:name=".Activities.SignUpActivity" />
         <activity
