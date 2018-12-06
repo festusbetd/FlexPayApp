@@ -1,6 +1,7 @@
 package com.example.mercy.flexpay.Activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.example.mercy.flexpay.BuildConfig;
 import com.example.mercy.flexpay.R;
 
 public class SplashActivity extends AppCompatActivity {
@@ -22,6 +24,9 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+
+        checkFirstRun();
+
         splashscreenLogoImg =  findViewById(R.id.activity_splash_splashscreen_logo_img);
         textViewFlexpay =findViewById(R.id.activity_splash_textView_flexpay);
         textViewLipiaPolePole = findViewById(R.id.activity_splash_textView_lipia_pole_pole);
@@ -43,6 +48,37 @@ public class SplashActivity extends AppCompatActivity {
             }
         }, 5500);
     }
+
+    private void checkFirstRun() {
+        final String PREFS_NAME = "MyPrefsFile";
+        final String PREF_VERSION_CODE_KEY = "version_code";
+        final int DOESNT_EXIST = -1;
+
+        // Get current version code
+        int currentVersionCode = BuildConfig.VERSION_CODE;
+
+        // Get saved version code
+        SharedPreferences prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        int savedVersionCode = prefs.getInt(PREF_VERSION_CODE_KEY, DOESNT_EXIST);
+
+        // Check for first run or upgrade
+        if (currentVersionCode == savedVersionCode) {
+            // This is just a normal run
+            return;
+
+        } else if (savedVersionCode == DOESNT_EXIST) {
+            // TODO This is a new install (or the user cleared the shared preferences)
+            Intent intent = new Intent(getApplicationContext(),WalkthroughActivity.class);
+            startActivity(intent);
+
+        } else if (currentVersionCode > savedVersionCode) {
+            // TODO This is an upgrade
+        }
+
+        // Update the shared preferences with the current version code
+        prefs.edit().putInt(PREF_VERSION_CODE_KEY, currentVersionCode).apply();
+    }
+
     private void flyIn() {
         animation = AnimationUtils.loadAnimation(this, R.anim.logo_animation);
         splashscreenLogoImg.startAnimation(animation);

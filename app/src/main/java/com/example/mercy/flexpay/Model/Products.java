@@ -21,20 +21,9 @@ public class Products implements Serializable
     private long status_code;
     private final static long serialVersionUID = 4200776686822887819L;
 
-    /**
-     * No args constructor for use in serialization
-     *
-     */
     public Products() {
     }
 
-    /**
-     *
-     * @param status_code
-     * @param errors
-     * @param data
-     * @param success
-     */
     public Products(List<Datum> data, List<Object> errors, boolean success, long status_code) {
         super();
         this.data = data;

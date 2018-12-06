@@ -102,16 +102,7 @@ public class LoginActivity extends AppCompatActivity {
                     checkConnection();
 //
                 } else {
-                    Snackbar snackbar = Snackbar
-                            .make(linearLayout, "Form contains errors", Snackbar.LENGTH_LONG)
-                            .setAction("OK", new View.OnClickListener() {
-                                @Override
-                                public void onClick(View view) {
 
-                                }
-                            });
-
-                    snackbar.show();
 
                 }
             }

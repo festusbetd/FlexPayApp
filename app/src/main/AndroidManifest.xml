@@ -18,21 +18,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Activities.WalkthroughActivity" />
         <activity
             android:name=".Activities.SplashActivity"
             android:theme="@style/AppTheme.NoActionBar">
-
         </activity>
-        <activity android:name=".Activities.LoginActivity" />
+        <activity
+            android:name=".Activities.LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".Activities.SignUpActivity" />
         <activity
             android:name=".Activities.DashboardActivity"
             android:label="@string/title_activity_dashboard"
             android:theme="@style/AppTheme" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".Activities.walletActivity" />
         <activity android:name=".Activities.GoalsActivity" />
@@ -44,7 +47,6 @@
         <activity android:name=".Activities.SettingsActivity" />
         <activity android:name=".Activities.MainPage" />
         <activity android:name=".Activities.DummyActivity">
-
         </activity>
     </application>
 
