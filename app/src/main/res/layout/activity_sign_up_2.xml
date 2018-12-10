@@ -54,16 +54,21 @@
                     android:layout_marginTop="25dp"
                     >
                     <android.support.design.widget.TextInputLayout
+                        android:id="@+id/editTextLoginPhoneTextInputLayoutRegister"
                         android:textColorHint="@color/blue_lagoon"
                         android:layout_width="match_parent"
                         android:theme="@style/TextLabel"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        app:counterMaxLength="12"
+                        app:counterEnabled="true"
+                        app:counterTextAppearance="@style/counterText"
+                        app:counterOverflowTextAppearance="@style/counterOverride">
                         <EditText
                             android:id="@+id/editTextPhone"
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:padding="10dp"
+                            android:padding="15dp"
+                            android:textSize="22sp"
                             android:drawableLeft="@drawable/ic_phone_in_talk_black_24dp"
                             android:drawablePadding="10dp"
                             android:hint="@string/activity_sign_up_phone_number"
@@ -82,15 +87,19 @@
                     android:orientation="vertical"
                     >
                     <android.support.design.widget.TextInputLayout
+                        android:id="@+id/editTextLoginEmailTextInputLayoutRegister"
                         android:textColorHint="@color/blue_lagoon"
                         android:layout_width="match_parent"
                         android:theme="@style/TextLabel"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        app:counterTextAppearance="@style/counterText"
+                        app:counterOverflowTextAppearance="@style/counterOverride">
                         <EditText
                             android:id="@+id/editTextEmail"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:padding="10dp"
+                            android:padding="15dp"
+                            android:textSize="22sp"
                             android:drawableLeft="@drawable/ic_email_black_24dp"
                             android:drawablePadding="10dp"
                             android:hint="@string/activity_sign_up_email"
@@ -109,15 +118,19 @@
                     android:orientation="vertical"
                     >
                     <android.support.design.widget.TextInputLayout
+                        android:id="@+id/editTextLoginusernameTextInputLayoutRegister"
                         android:textColorHint="@color/blue_lagoon"
                         android:layout_width="match_parent"
                         android:theme="@style/TextLabel"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        app:counterTextAppearance="@style/counterText"
+                        app:counterOverflowTextAppearance="@style/counterOverride">
                         <EditText
                             android:id="@+id/editTextUsername"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:padding="10dp"
+                            android:padding="15dp"
+                            android:textSize="22sp"
                             android:drawableLeft="@drawable/ic_person_black_24dp"
                             android:drawablePadding="10dp"
                             android:hint="@string/activity_sign_up_username"
@@ -134,11 +147,6 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     >
-                    <android.support.design.widget.TextInputLayout
-                        android:textColorHint="@color/blue_lagoon"
-                        android:layout_width="match_parent"
-                        android:theme="@style/TextLabel"
-                        android:layout_height="wrap_content">
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -147,14 +155,22 @@
                             android:layout_marginRight="10dp"
                             android:paddingTop="10dp"
                             android:paddingBottom="20dp">
-
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/editTextLoginPasswordTextInputLayoutFirstNameRegister"
+                                android:textColorHint="@color/blue_lagoon"
+                                android:layout_width="match_parent"
+                                android:theme="@style/TextLabel"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
+                                android:layout_gravity="right"
+                                app:counterTextAppearance="@style/counterText"
+                                app:counterOverflowTextAppearance="@style/counterOverride">
                             <EditText
                                 android:id="@+id/editTextFirst"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:padding="10dp"
-                                android:layout_weight="0.5"
-                                android:layout_gravity="right"
+                                android:padding="15dp"
+                                android:textSize="20sp"
                                 android:digits="abcdefghijklmnopqrstuvwxyz"
                                 android:drawableLeft="@drawable/ic_person_black_24dp"
                                 android:drawablePadding="10dp"
@@ -163,36 +179,40 @@
                                 android:textColor="@color/blue_lagoon"
                                 android:textColorHint="@color/blue_lagoon"
                                 android:textColorHighlight="@color/white"/>
-
+                            </android.support.design.widget.TextInputLayout>
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/editTextLoginPasswordTextInputLayoutLastNameRegister"
+                                android:textColorHint="@color/blue_lagoon"
+                                android:layout_width="match_parent"
+                                android:theme="@style/TextLabel"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="right"
+                                android:layout_weight="0.5"
+                                app:counterTextAppearance="@style/counterText"
+                                app:counterOverflowTextAppearance="@style/counterOverride">
                             <EditText
                                 android:id="@+id/editTextLast"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="right"
-                                android:layout_weight="0.5"
                                 android:digits="abcdefghijklmnopqrstuvwxyz"
                                 android:hint="@string/activity_sign_up_last_name"
                                 android:drawableLeft="@drawable/ic_person_black_24dp"
                                 android:drawablePadding="10dp"
                                 android:inputType="text"
-                                android:padding="10dp"
+                                android:padding="15dp"
+                                android:textSize="20sp"
                                 android:textColor="@color/blue_lagoon"
                                 android:textColorHint="@color/blue_lagoon"
                                 android:textColorHighlight="@color/white"/>
-
+                            </android.support.design.widget.TextInputLayout>
                         </LinearLayout>
-                    </android.support.design.widget.TextInputLayout>
+
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     >
-                    <android.support.design.widget.TextInputLayout
-                        android:textColorHint="@color/blue_lagoon"
-                        android:layout_width="match_parent"
-                        android:theme="@style/TextLabel"
-                        android:layout_height="wrap_content">
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -200,37 +220,63 @@
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="10dp"
                             android:paddingBottom="10dp">
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/editTextLoginPasswordTextInputLayoutPasswordRegister"
+                                android:textColorHint="@color/blue_lagoon"
+                                android:layout_width="match_parent"
+                                android:theme="@style/TextLabel"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
+                                android:layout_gravity="right"
+                                app:passwordToggleEnabled="true"
+                                app:counterEnabled="true"
+                                app:counterTextAppearance="@style/counterText"
+                                app:counterOverflowTextAppearance="@style/counterOverride">
                             <EditText
                                 android:id="@+id/editTextPassword"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="0.5"
-                                android:layout_gravity="right"
+                                android:drawableStart="@drawable/ic_lock_black_24dp"
                                 android:drawableLeft="@drawable/ic_lock_black_24dp"
                                 android:drawablePadding="6dp"
                                 android:hint="@string/activity_sign_up_password"
+                                android:ems="6"
                                 android:inputType="textPassword"
-                                android:padding="10dp"
+                                android:padding="15dp"
+                                android:textSize="20sp"
                                 android:textColor="@color/blue_lagoon"
                                 android:textColorHint="@color/blue_lagoon"
                                 android:textColorHighlight="@color/white"/>
-
+                            </android.support.design.widget.TextInputLayout>
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/editTextLoginPasswordTextInputLayoutConfirmPasswordRegister"
+                                android:textColorHint="@color/blue_lagoon"
+                                android:layout_width="match_parent"
+                                android:theme="@style/TextLabel"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="right"
+                                android:layout_weight="0.5"
+                                app:passwordToggleEnabled="true"
+                                app:counterEnabled="true"
+                                app:counterTextAppearance="@style/counterText"
+                                app:counterOverflowTextAppearance="@style/counterOverride">
                             <EditText
                                 android:id="@+id/editTextConfirm_password"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="right"
-                                android:layout_weight="0.5"
                                 android:hint="@string/activity_sign_up_confirm"
+                                android:drawableStart="@drawable/ic_lock_black_24dp"
                                 android:drawableLeft="@drawable/ic_lock_black_24dp"
                                 android:drawablePadding="6dp"
                                 android:inputType="textPassword"
-                                android:padding="10dp"
+                                android:ems="6"
+                                android:padding="15dp"
+                                android:textSize="20sp"
                                 android:textColor="@color/blue_lagoon"
                                 android:textColorHint="@color/blue_lagoon"
                                 android:textColorHighlight="@color/white"/>
+                            </android.support.design.widget.TextInputLayout>
                         </LinearLayout>
-                    </android.support.design.widget.TextInputLayout>
                 </LinearLayout>
                 <Button
                     android:id="@+id/buttonSignup"

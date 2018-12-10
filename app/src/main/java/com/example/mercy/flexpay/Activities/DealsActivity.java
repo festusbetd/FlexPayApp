@@ -14,6 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mercy.flexpay.R;
@@ -25,7 +26,7 @@ public class DealsActivity extends AppCompatActivity {
 
     private Button sonyReserve,lgReserve,otherReserve;
     final Context context = this;
-    private EditText lg,sony,other;
+    private TextView lg,sony,other;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +38,64 @@ public class DealsActivity extends AppCompatActivity {
         sonyReserve = findViewById(R.id.activity_main_page_sony_reserve_now);
         otherReserve = findViewById(R.id.activity_main_page_sony_reserve_now1);
 
+// Spinner element
+        Spinner spinner =  findViewById(R.id.spinnerProductsCategory);
+        // Spinner Drop down elements
+        List<String> categories = new ArrayList<String>();
+        categories.add("Tuskys Deals poa");
+        categories.add("Flex Travel");
+        categories.add("Jenga pole pole");
+        categories.add("Buy motor vehicle");
 
+        // Creating adapter for spinner
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
+        // Drop down layout style - list view with radio button
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // attaching data adapter to spinner
+        spinner.setAdapter(dataAdapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String item = parent.getItemAtPosition(position).toString();
+                Toast.makeText(parent.getContext(), "Selected" + item, Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+        // Spinner element
+        Spinner spinner_products_types =  findViewById(R.id.spinnerProductsTypes);
+
+        // Spinner Drop down elements
+        List<String> products_types = new ArrayList<String>();
+        products_types.add("Retail Deals");
+        products_types.add("Travel Deals");
+        products_types.add("Rent Deals");
+        products_types.add("Motor Vehicle Deals");
+        // Creating adapter for spinner
+        ArrayAdapter<String> dataAdapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, products_types);
+
+        // Drop down layout style - list view with radio button
+        dataAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        // attaching data adapter to spinner
+        spinner_products_types.setAdapter(dataAdapter2);
+        spinner_products_types.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                String item = parent.getItemAtPosition(position).toString();
+
+                Toast.makeText(parent.getContext(), "Selected" + item, Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
         lg = findViewById(R.id.editTextLg);
         sony = findViewById(R.id.editTextResultSony);
         other = findViewById(R.id.editTextOther);
@@ -95,7 +153,7 @@ public class DealsActivity extends AppCompatActivity {
         // set dialog message
         alertDialogBuilder
                 .setCancelable(false)
-                .setPositiveButton("OK",
+                .setPositiveButton("Book Now",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog,int id) {
                                 // get user input and set it to result
@@ -107,7 +165,7 @@ public class DealsActivity extends AppCompatActivity {
 
                                 int bal = (139000 - finalAmount);
 
-                               lg.setText("Bal:Ksh "+bal);
+                               lg.setText("Bal:Ksh "+bal+"within 60 days");
                             }
                         })
                 .setNegativeButton("Cancel",
@@ -151,9 +209,9 @@ public class DealsActivity extends AppCompatActivity {
 
                                 int finalAmount =Integer.parseInt(amount);
 
-                                int bal = (139000 - finalAmount);
+                                int bal = (115000 - finalAmount);
 
-                                sony.setText("Bal:Ksh "+bal);
+                                sony.setText("Bal:Ksh "+bal+"within 60 days");
                             }
                         })
                 .setNegativeButton("Cancel",
@@ -197,9 +255,9 @@ public class DealsActivity extends AppCompatActivity {
 
                                 int finalAmount =Integer.parseInt(amount);
 
-                                int bal = (139000 - finalAmount);
+                                int bal = (85000 - finalAmount);
 
-                                other.setText("Bal:Ksh "+bal);
+                                other.setText("Bal:Ksh "+bal+"within 60 days");
                             }
                         })
                 .setNegativeButton("Cancel",

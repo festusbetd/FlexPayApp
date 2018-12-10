@@ -52,13 +52,15 @@ public class walletActivity extends AppCompatActivity {
     }
 
     private void proceedWithdraw() {
+        startActivity(new Intent(getApplicationContext(),withdrawActivity.class));
+        finish();
     /*    Toast.makeText(this, "Unable to withdraw now", Toast.LENGTH_SHORT).show();*/
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+      /*  AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Error");
         builder.setMessage("Unable to withdraw now");
         builder.setNegativeButton("OK", null);
         AlertDialog dialog = builder.create();
-        dialog.show();
+        dialog.show();*/
     }
     private void proceedRequestLoan() {
         /*Toast.makeText(this, "Unable to borrow loan", Toast.LENGTH_SHORT).show();*/

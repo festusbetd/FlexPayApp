@@ -35,4 +35,12 @@
         <item name="colorControlActivated">@color/colorPrimary</item>
         <!-- colorControlActivated & colorControlHighlight use the colorAccent          color by default -->
     </style>
+
+    <style name="counterText">
+        <item name="android:textColor">@color/blue_lagoon</item>
+    </style>
+
+    <style name="counterOverride">
+        <item name="android:textColor">#ff0000</item>
+    </style>
 </resources>

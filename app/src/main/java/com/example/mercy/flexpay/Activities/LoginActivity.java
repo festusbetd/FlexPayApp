@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.net.ConnectivityManager;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -63,7 +64,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login_2);
 
         linearLayout = findViewById(R.id.linearlayout);
-        editTextLoginEmail = findViewById(R.id.editTextLoginPhone);
+        editTextLoginEmail = findViewById(R.id.editTextLoginEmail);
         editTextLoginPin = findViewById(R.id.editTextLoginPin);
         btnlogin = findViewById(R.id.btnlogin);
         textSign = findViewById(R.id.textSign);
@@ -74,6 +75,35 @@ public class LoginActivity extends AppCompatActivity {
         // Applying font
         editTextLoginEmail.setTypeface(tf);
         editTextLoginPin.setTypeface(tf);
+
+        final TextInputLayout floatingPasswordLabel = (TextInputLayout) findViewById(R.id.editTextLoginPasswordTextInputLayoutLogin);
+        floatingPasswordLabel.getEditText().addTextChangedListener(new TextWatcher() {
+            // ...
+            @Override
+            public void onTextChanged(CharSequence text, int start, int count, int after) {
+                if (text.length() > 0 && text.length() <= 5) {
+                    floatingPasswordLabel.setError(getString(R.string.minimum_of_6));
+                    floatingPasswordLabel.setErrorEnabled(true);
+                }
+                else {
+                    floatingPasswordLabel.setErrorEnabled(false);
+                }
+            }
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count,
+                                          int after) {
+                // TODO Auto-generated method stub
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+
+
+
         textSign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -112,6 +142,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private boolean loginValidation() {
         boolean ret = true;
+
         if (!Validation.hasText(editTextLoginEmail)) ret = false;
         if (!Validation.hasText(editTextLoginPin)) ret = false;
         return ret;
@@ -211,7 +242,7 @@ public class LoginActivity extends AppCompatActivity {
         } else {
 
             Snackbar snackbar = Snackbar
-                    .make(linearLayout, "Internet not connected", Snackbar.LENGTH_LONG)
+                    .make(linearLayout, "Please check your internet connection", Snackbar.LENGTH_LONG)
                     .setAction("RETRY", new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {

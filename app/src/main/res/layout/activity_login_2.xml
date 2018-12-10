@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:id="@+id/linearlayout2"
+<LinearLayout android:id="@+id/linearlayout2"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -71,19 +71,20 @@
             android:paddingTop="10dp"
             >
             <android.support.design.widget.TextInputLayout
+                android:id="@+id/editTextLoginEmailTextInputLayout"
                 android:textColorHint="@color/blue_lagoon"
                 android:layout_width="match_parent"
                 android:theme="@style/TextLabel"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                >
                 <EditText
-                    android:id="@+id/editTextLoginPhone"
+                    android:id="@+id/editTextLoginEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:alpha="0.6"
                     android:drawableLeft="@drawable/ic_person_black_24dp"
                     android:drawablePadding="10dp"
-                    android:fontFamily="casual"
                     android:hint="Email"
                     android:inputType="textEmailAddress"
                     android:padding="15dp"
@@ -91,7 +92,6 @@
                     android:textColor="@color/blue_lagoon"
                     android:textColorHighlight="@color/blue_lagoon"
                     android:textColorHint="@color/blue_lagoon"
-                    tools:targetApi="jelly_bean"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     />
@@ -129,30 +129,34 @@
             android:paddingTop="10dp"
             >
             <android.support.design.widget.TextInputLayout
+                android:id="@+id/editTextLoginPasswordTextInputLayoutLogin"
                 android:textColorHint="@color/blue_lagoon"
                 android:layout_width="match_parent"
                 android:theme="@style/TextLabel"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                app:passwordToggleEnabled="true"
+                app:counterEnabled="true"
+                app:counterTextAppearance="@style/counterText"
+                app:counterOverflowTextAppearance="@style/counterOverride">
                 <EditText
                     android:id="@+id/editTextLoginPin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:alpha="0.6"
-                    android:drawableLeft="@drawable/ic_lock_black_24dp"
                     android:drawablePadding="10dp"
-                    android:fontFamily="casual"
                     android:hint="Password"
                     android:inputType="textPassword"
+                    android:ems="6"
                     android:padding="15dp"
                     android:paddingTop="110dp"
                     android:textColor="@color/blue_lagoon"
                     android:textColorHighlight="@color/blue_lagoon"
                     android:textColorHint="@color/blue_lagoon"
-                    tools:targetApi="jelly_bean"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    />
+                    android:drawableStart="@drawable/ic_lock_black_24dp"
+                    android:drawableLeft="@drawable/ic_lock_black_24dp" />
             </android.support.design.widget.TextInputLayout>
         </LinearLayout>
       <!--  <EditText

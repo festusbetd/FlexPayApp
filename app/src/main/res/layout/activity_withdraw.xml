@@ -20,7 +20,7 @@
             android:background="?attr/colorPrimary"
             android:minHeight="?attr/actionBarSize"
             app:theme="@style/ThemeOverlay.AppCompat.Dark" />
-        <LinearLayout
+       <!-- <LinearLayout
             android:id="@+id/wallet_title"
             android:layout_below="@+id/withdraw_toolbar"
             android:layout_width="match_parent"
@@ -47,15 +47,15 @@
                 android:layout_height="wrap_content"
                 android:text="@string/activity_withdraw_arrow_withdraw_withdraw2"
                 android:textSize="18sp"/>
-        </LinearLayout>
-        <View
+        </LinearLayout>-->
+     <!--   <View
             android:layout_below="@+id/wallet_title"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@android:color/darker_gray"/>
+            android:background="@android:color/darker_gray"/>-->
         <RelativeLayout
             android:id="@+id/wallet_balance"
-            android:layout_below="@+id/wallet_title"
+            android:layout_below="@+id/withdraw_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
@@ -259,7 +259,6 @@
                    android:layout_below="@+id/withdraw_mpesa_msg"
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
-
                    android:orientation="horizontal"
                    >
                    <TextView
@@ -268,7 +267,7 @@
                        android:layout_height="wrap_content"
                        android:layout_centerInParent="true"
                        android:text="@string/activity_withdraw_leave_as_is_to_send_to_your_phone_number"
-                       android:textColor="@color/zircon"
+                       android:textColor="@color/blue_lagoon"
                        android:textSize="12sp" />
 
                </RelativeLayout>
@@ -278,22 +277,33 @@
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:orientation="horizontal">
-               <EditText
-                   android:id="@+id/withdrwEditTextPhone"
-                   android:layout_width="fill_parent"
-                   android:layout_height="wrap_content"
-                   android:layout_marginTop="10dp"
-                   android:padding="15dp"
-                   android:alpha="0.8"
-                   android:drawableLeft="@drawable/ic_phone_in_talk_black_24dp"
-                   android:drawablePadding="10dp"
-                   android:hint="@string/activity_withdraw_hint_phone_number"
-                   android:layout_marginLeft="30dp"
-                   android:layout_marginRight="30dp"
-                   android:textColor="@color/blue_lagoon"
-                   android:inputType="phone"
-                   android:textColorHint="@color/white"
-                   android:textColorHighlight="@color/white"/>
+                   <android.support.design.widget.TextInputLayout
+                       android:id="@+id/editTextPhoneTextInputLayoutWithdraw"
+                       android:textColorHint="@color/blue_lagoon"
+                       android:layout_width="match_parent"
+                       android:theme="@style/TextLabel"
+                       android:layout_height="wrap_content"
+                       app:passwordToggleEnabled="true"
+                       app:counterEnabled="true"
+                       app:counterTextAppearance="@style/counterText"
+                       app:counterOverflowTextAppearance="@style/counterOverride">
+                               <EditText
+                                   android:id="@+id/withdrwEditTextPhone"
+                                   android:layout_width="fill_parent"
+                                   android:layout_height="wrap_content"
+                                   android:layout_marginTop="10dp"
+                                   android:padding="15dp"
+                                   android:alpha="0.8"
+                                   android:drawableLeft="@drawable/ic_phone_in_talk_black_24dp"
+                                   android:drawablePadding="10dp"
+                                   android:hint="@string/activity_withdraw_hint_phone_number"
+                                   android:layout_marginLeft="30dp"
+                                   android:layout_marginRight="30dp"
+                                   android:textColor="@color/blue_lagoon"
+                                   android:inputType="phone"
+                                   android:textColorHint="@color/blue_lagoon"
+                                   android:textColorHighlight="@color/blue_lagoon"/>
+                   </android.support.design.widget.TextInputLayout>
            </RelativeLayout>
 
                <RelativeLayout

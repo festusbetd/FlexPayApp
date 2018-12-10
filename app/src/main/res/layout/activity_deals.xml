@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,38 +14,14 @@
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         app:theme="@style/ThemeOverlay.AppCompat.Dark" />
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="0dp">
-
-        <LinearLayout
-            android:id="@+id/deals_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:orientation="horizontal">
-            <TextView
-                android:id="@+id/text_view_activity_deals_home"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/activity_wallet_home"
-                android:textColor="@color/blue_lagoon"
-                android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
-                android:textStyle="bold"
-                android:textSize="23sp" />
-            <TextView
-                android:id="@+id/textView_deals_toolbar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:text="@string/activity_deals_toolbar"
-                android:textSize="18sp"/>
-        </LinearLayout>
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
@@ -65,13 +42,13 @@
             android:layout_marginRight="0dp"
             android:background="@color/regent_blue"
             android:orientation="horizontal"
-            android:layout_marginTop="10dp"
+
             android:layout_marginBottom="10dp"
             android:paddingTop="10dp"
             android:paddingBottom="20dp">
             <Spinner
                 android:spinnerMode="dropdown"
-                android:id="@+id/spinner"
+                android:id="@+id/spinnerProductsCategory"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -86,7 +63,7 @@
                 android:background="@android:color/darker_gray"/>
             <Spinner
                 android:spinnerMode="dropdown"
-                android:id="@+id/spinner_deals_products_types"
+                android:id="@+id/spinnerProductsTypes"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
@@ -166,10 +143,14 @@
                         android:textColor="@color/pure_white"
                         android:drawableRight="@drawable/ic_keyboard_arrow_right_pure_white_24dp"
                         android:background="@drawable/shapegoal"/>
-                    <EditText
+                    <TextView
                         android:id="@+id/editTextLg"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:textSize="22dp"
+                        android:padding="5dp"
+                        android:textColor="#49A4CA" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -260,10 +241,14 @@
                         android:textColor="@color/pure_white"
                         android:drawableRight="@drawable/ic_keyboard_arrow_right_pure_white_24dp"
                         android:background="@drawable/shapegoal"/>
-                    <EditText
+                    <TextView
                         android:id="@+id/editTextResultSony"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:textSize="22dp"
+                        android:padding="5dp"
+                        android:textColor="#49A4CA"/>
 
                 </LinearLayout>
 
@@ -312,13 +297,13 @@
                         android:textColor="@color/blue_lagoon"
                         android:layout_marginLeft="20dp"
                         android:layout_marginTop="10dp"
-                        android:text="SONY 51” TV"/>
+                        android:text="SONY 41” TV"/>
                     <TextView
                         android:id="@+id/textView_activity_deals_page_sony_price1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
-                        android:text="115,000"
+                        android:text="85,000"
                         android:textSize="26dp"
                         android:textStyle="bold"
                         android:padding="5dp"
@@ -353,10 +338,14 @@
                         android:textColor="@color/pure_white"
                         android:drawableRight="@drawable/ic_keyboard_arrow_right_pure_white_24dp"
                         android:background="@drawable/shapegoal"/>
-                    <EditText
+                    <TextView
                         android:id="@+id/editTextOther"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:textSize="22dp"
+                        android:padding="5dp"
+                        android:textColor="#49A4CA" />
                 </LinearLayout>
 
                 <LinearLayout

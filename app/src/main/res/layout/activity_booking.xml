@@ -14,40 +14,16 @@
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         app:theme="@style/ThemeOverlay.AppCompat.Dark" />
-    <LinearLayout
-        android:id="@+id/activity_booking_title"
-        android:layout_below="@+id/activity_booking_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingTop="10dp"
-        android:paddingLeft="10dp"
-        android:paddingBottom="10dp">
-        <TextView
-            android:id="@+id/activity_booking_home_textview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/activity_booking_home_text"
-            android:textColor="@color/blue_lagoon"
-            android:textStyle="bold"
-            android:textSize="18sp" />
-        <TextView
-            android:id="@+id/activity_booking_arrow_booking_textview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/activity_booking_booking_arrow_text"
-            android:textSize="18sp"/>
 
-    </LinearLayout>
     <View
-        android:layout_below="@+id/activity_booking_title"
+        android:layout_below="@+id/activity_booking_toolbar"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@android:color/darker_gray"/>
 
     <LinearLayout
         android:id="@+id/activity_booking_titleBars"
-        android:layout_below="@+id/activity_booking_title"
+        android:layout_below="@+id/activity_booking_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"

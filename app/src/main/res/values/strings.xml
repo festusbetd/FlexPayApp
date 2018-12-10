@@ -16,7 +16,7 @@
     <string name="app_name_deals">Deals</string>
     <string name="app_name_goals">Goals</string>
     <string name="app_name_profile">Profile</string>
-    <string name="app_name_withdraw">Withdaw</string>
+    <string name="app_name_withdraw">Withdraw</string>
     <string name="app_name_add_goals">Add Goal</string>
     <string name="activity_account_management_create_account">CREATE ACOUNT</string>
     <string name="activity_account_management_log_in">Log In</string>
@@ -119,7 +119,16 @@
     <string name="activity_product_list_product_attribute">Product Attribute</string>
     <string name="activity_withdraw_to_mpesa">Withdraw To Mpesa</string>
     <string name="activity_wallet_arrow_wallet1">Wallet</string>
-    <string name="activity_deals_arrow_deals">> Deals</string>
+    <string name="activity_deals_arrow_deals">Deals</string>
     <string name="activity_goals_from_date">From Date</string>
     <string name="activity_deals_toolbar">Deals</string>
+    <string name="username_required">Username Required</string>
+
+    <string name="enter_valid_phone_number">Enter Valid Phone Number 2547***</string>
+    <string name="minimum_of_6">Minimum of 6</string>
+    <string name="enter_valid_email_address">Enter Valid Email</string>
+    <string name="both_passwords_should_match">Both passwords should match</string>
+    <string name="enter_first_name">Enter First Name</string>
+    <string name="enter_last_name">Enter Last Name</string>
+    <string name="enter_phone_number">Enter Phone Number</string>
 </resources>

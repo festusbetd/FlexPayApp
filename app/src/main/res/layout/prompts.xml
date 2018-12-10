@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="24sp"
-            android:alpha="0.56"
+
             android:layout_gravity="center"
             android:gravity="center"
             android:text="Enter your Initial Deposit" />
@@ -33,16 +33,17 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:padding="10dp"
+                android:alpha="0.56"
                 android:drawableLeft="@drawable/ic_attach_money_black_24dp"
                 android:drawablePadding="10dp"
                 android:layout_margin="35dp"
-                android:hint="Ksh 1000"
+                android:textSize="22sp"
+                android:hint="Minimum Deposit Ksh 1000"
                 android:gravity="center"
                 android:textColor="@color/blue_lagoon"
                 android:inputType="number"
                 android:textColorHint="@color/blue_lagoon"
                 android:textColorHighlight="@color/white">
-
                 <requestFocus />
             </EditText>
         </android.support.design.widget.TextInputLayout>
