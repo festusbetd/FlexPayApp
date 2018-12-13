@@ -36,7 +36,8 @@
     </group>
     <item android:title="">
         <menu>
-            <group android:checkableBehavior="single" android:id="@+id/profile">
+            <group android:checkableBehavior="single"
+                android:id="@+id/profile">
             <item
                 android:id="@+id/nav_profile"
                 android:icon="@drawable/ic_menu_profile"

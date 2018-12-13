@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
@@ -42,5 +42,12 @@
 
     <style name="counterOverride">
         <item name="android:textColor">#ff0000</item>
+    </style>
+
+    <style name="MyProgressBar" parent="@style/Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:progressBackgroundTint" tools:targetApi="lollipop">@color/blue_lagoon</item>
+        <item name="android:progressTint" tools:targetApi="lollipop">@color/blue_lagoon</item>
+        <item name="android:minHeight">40dp</item>
+        <item name="android:maxHeight">40dp</item>
     </style>
 </resources>

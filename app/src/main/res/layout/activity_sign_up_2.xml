@@ -228,7 +228,6 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="0.5"
                                 android:layout_gravity="right"
-                                app:passwordToggleEnabled="true"
                                 app:counterEnabled="true"
                                 app:counterTextAppearance="@style/counterText"
                                 app:counterOverflowTextAppearance="@style/counterOverride">
@@ -256,7 +255,6 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="right"
                                 android:layout_weight="0.5"
-                                app:passwordToggleEnabled="true"
                                 app:counterEnabled="true"
                                 app:counterTextAppearance="@style/counterText"
                                 app:counterOverflowTextAppearance="@style/counterOverride">
@@ -307,8 +305,6 @@
                     android:checked="true"/>
             </LinearLayout>
         </android.support.v7.widget.CardView>
-
-
     </LinearLayout>
 
 

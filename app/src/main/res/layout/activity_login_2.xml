@@ -220,17 +220,18 @@
             android:textSize="18sp"
             android:textStyle="bold" />
 
+
         <TextView
+           android:padding="10dp"
             android:id="@+id/textSign"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="110dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginStart="110dp"
-            android:layout_marginTop="0dp"
-            android:paddingTop="0dp"
             android:shadowColor="@android:color/transparent"
             android:text="@string/activity_login_not_a_member_register"
-            android:textColor="@color/blue_lagoon" />
+            android:textColor="@color/blue_lagoon"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:textSize="20sp"
+            />
     </LinearLayout>
 </LinearLayout>

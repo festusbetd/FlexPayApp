@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:context=".Activities.walletActivity"
-    android:orientation="vertical">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activities.walletActivity">
     <android.support.v7.widget.Toolbar
         android:id="@+id/wallet_toolbar"
         android:layout_width="match_parent"
@@ -14,13 +14,22 @@
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         app:theme="@style/ThemeOverlay.AppCompat.Dark" />
-
+   <!-- <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="0dp">
     <View
         android:id="@+id/activity_wallet_line"
         android:layout_below="@+id/wallet_toolbar"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@android:color/darker_gray"/>
+
+
      <RelativeLayout
          android:id="@+id/wallet_balance"
          android:layout_below="@+id/activity_wallet_line"
@@ -79,7 +88,7 @@
          android:layout_below="@+id/wallet_balance"
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
-         android:padding="15dp"
+         android:padding="4dp"
          android:orientation="horizontal">
          <RelativeLayout
              android:layout_width="wrap_content"
@@ -142,7 +151,6 @@
              android:layout_centerHorizontal="true"
              android:layout_margin="8dp"
              android:orientation="horizontal">
-
              <Button
                  android:id="@+id/activity_wallet_btnWithdraw"
                  android:layout_width="wrap_content"
@@ -151,9 +159,9 @@
                  android:background="@drawable/shapewithdraw"
                  android:padding="4dp"
                  android:text="Withdraw"
-                 android:textColor="@color/spring_green"
-                 android:textSize="13sp"
-                 android:textStyle="bold" />
+                 android:textColor="@color/pure_white"
+                 android:textSize="17sp"
+                 />
          </RelativeLayout>
      </RelativeLayout>
 
@@ -227,12 +235,16 @@
              android:layout_below="@+id/deal1"
              android:orientation="horizontal"
              android:paddingLeft="20dp">
-             <View
-                 android:layout_margin="10dp"
+             <ProgressBar
+                 android:id="@+id/progressBar4"
+                 style="@style/MyProgressBar"
                  android:layout_width="match_parent"
-                 android:layout_height="3dp"
-                 android:background="@android:color/darker_gray"/>
-
+                 android:layout_height="wrap_content"
+                 android:layout_marginEnd="8dp"
+                 android:layout_marginStart="8dp"
+                 android:layout_marginTop="16dp"
+                 android:progress="58"
+                 />
          </RelativeLayout>
          <RelativeLayout
              android:id="@+id/TextViewScoreValue"
@@ -319,8 +331,20 @@
              android:textColor="@color/pure_white"
              android:drawableRight="@drawable/ic_add_black_24dp"
              android:background="@drawable/shapeloan"/>
+       </RelativeLayout>
+
      </RelativeLayout>
- </RelativeLayout>
+        <LinearLayout
+            android:layout_below="@+id/WalletLoanRequest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    </RelativeLayout>
+            <lecho.lib.hellocharts.view.LineChartView
+                android:id="@+id/chart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
 
+    </LinearLayout>
+
+</LinearLayout>
