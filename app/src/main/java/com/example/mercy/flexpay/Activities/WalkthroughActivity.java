@@ -64,7 +64,7 @@ public class WalkthroughActivity extends AhoyOnboarderActivity {
     @Override
     public void onFinishButtonPressed() {
         //Toast.makeText(this, "Finish Pressed", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(getApplicationContext(),MainPage.class);
+        Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
         startActivity(intent);
     }
 }

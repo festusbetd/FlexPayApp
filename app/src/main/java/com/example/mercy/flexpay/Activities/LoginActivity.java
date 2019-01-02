@@ -4,14 +4,14 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.net.ConnectivityManager;
+import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
@@ -20,21 +20,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
 import com.example.mercy.flexpay.Api.APIService;
 import com.example.mercy.flexpay.Api.APIUrl;
-import com.example.mercy.flexpay.BuildConfig;
 import com.example.mercy.flexpay.Model.AuthUser;
 import com.example.mercy.flexpay.R;
-import com.example.mercy.flexpay.helper.SessionManager;
-import com.example.mercy.flexpay.helper.Validation;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -43,13 +32,13 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class LoginActivity extends AppCompatActivity {
-    public static final String ACCESS_TOKEN = "accessToken";
+ /*   public static final String ACCESS_TOKEN = "accessToken";
     public static final String REFRESH_TOKEN = "refreshToken";
     private static final String SHARED_PREF_NAME = "customer_profile";
     String access_token, refresh_token;
     String token;
     SharedPreferences prefs;
-    SessionManager session;
+    SessionManager session;*/
 
     private EditText editTextLoginEmail;
     private EditText editTextLoginPin;
@@ -57,6 +46,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button btnlogin;
     LinearLayout linearLayout;
     TextView textSign;
+    TextInputLayout textInputEmail,textInputPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +58,9 @@ public class LoginActivity extends AppCompatActivity {
         editTextLoginPin = findViewById(R.id.editTextLoginPin);
         btnlogin = findViewById(R.id.btnlogin);
         textSign = findViewById(R.id.textSign);
+
+        textInputEmail = (TextInputLayout) findViewById(R.id.editTextLoginEmailTextInputLayout);
+        textInputPassword = (TextInputLayout) findViewById(R.id.editTextLoginPasswordTextInputLayoutLogin);
         // Font path
         String fontPath = "font/JosefinSans-Light.ttf";
         // Loading Font Face
@@ -75,13 +68,37 @@ public class LoginActivity extends AppCompatActivity {
         // Applying font
         editTextLoginEmail.setTypeface(tf);
         editTextLoginPin.setTypeface(tf);
+        final TextInputLayout floatingEmailLabel = (TextInputLayout) findViewById(R.id.editTextLoginEmailTextInputLayout);
+        floatingEmailLabel.getEditText().addTextChangedListener(new TextWatcher() {
+            // ...
+            @Override
+            public void onTextChanged(CharSequence text, int start, int count, int after) {
+                if (text.length() < 5 ) {
+                    floatingEmailLabel.setError(getString(R.string.enter_valid_email_address));
+                    floatingEmailLabel.setErrorEnabled(true);
+                }
+                else {
+                    floatingEmailLabel.setErrorEnabled(false);
+                }
+            }
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count,
+                                          int after) {
+                // TODO Auto-generated method stub
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                floatingEmailLabel.setError(null);
+            }
+        });
 
         final TextInputLayout floatingPasswordLabel = (TextInputLayout) findViewById(R.id.editTextLoginPasswordTextInputLayoutLogin);
         floatingPasswordLabel.getEditText().addTextChangedListener(new TextWatcher() {
             // ...
             @Override
             public void onTextChanged(CharSequence text, int start, int count, int after) {
-                if (text.length() > 0 && text.length() <= 5) {
+                if (text.length() < 6) {
                     floatingPasswordLabel.setError(getString(R.string.minimum_of_6));
                     floatingPasswordLabel.setErrorEnabled(true);
                 }
@@ -97,22 +114,20 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-
+                 floatingPasswordLabel.setError(null);
             }
         });
-
-
 
 
         textSign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent signupIntent = new Intent(LoginActivity.this, SignUpActivity.class);
+                Intent signupIntent = new Intent(getApplicationContext(), SignUpActivity.class);
                 startActivity(signupIntent);
             }
         });
 
-        // Session Manager
+      /*  // Session Manager
         session = new SessionManager(getApplicationContext());
         HashMap<String, String> user = session.getUserDetails();
         token = user.get("access_token");
@@ -120,33 +135,47 @@ public class LoginActivity extends AppCompatActivity {
         if (session.isLoggedIn()) {
             startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
             finish();
-        }
+        }*/
+
+
+
 
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if (loginValidation()) {
                     email = editTextLoginEmail.getText().toString();
                     password = editTextLoginPin.getText().toString();
-                    checkConnection();
-//
-                } else {
 
+                if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+
+                    textInputEmail.setError(getString(R.string.enter_valid_email_address));
+                    textInputEmail.setErrorEnabled(true);
+                   // Toast.makeText(getApplicationContext(), "error", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                else if (TextUtils.isEmpty(password)) {
+                    textInputPassword.setError(getString(R.string.enter_password));
+                    textInputPassword.setErrorEnabled(true);
+                    return;
 
                 }
+                else if (password.length() < 6) {
+                    final TextInputLayout floatingPasswordLabel = (TextInputLayout) findViewById(R.id.editTextLoginPasswordTextInputLayoutLogin);
+                    floatingPasswordLabel.setError(getString(R.string.minimum_of_6));
+                    floatingPasswordLabel.setErrorEnabled(true);
+                    return;
+                }
+
+
+                checkConnection();
+//
             }
+
         });
 
     }
 
-    private boolean loginValidation() {
-        boolean ret = true;
-
-        if (!Validation.hasText(editTextLoginEmail)) ret = false;
-        if (!Validation.hasText(editTextLoginPin)) ret = false;
-        return ret;
-    }
     private void loginUser() {
         final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Signing in...");
@@ -168,7 +197,7 @@ public class LoginActivity extends AppCompatActivity {
                 progressDialog.dismiss();
                 if (response.isSuccessful()) {
                     if (response.body() != null) {
-                       /* AuthUser authUser = response.body();
+                     /*   AuthUser authUser = response.body();
                         access_token = authUser.getAccessToken();
                         refresh_token = authUser.getRefreshToken();
 
@@ -177,8 +206,16 @@ public class LoginActivity extends AppCompatActivity {
 
                         session.createLoginSession(email, password, access_token);*/
                    //     getCustomerProfile();
-                        startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
-                        finish();
+                      /*  startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
+                        finish();*/
+                        Toast.makeText(LoginActivity.this, "", Toast.LENGTH_SHORT).show();
+
+                        AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
+                        builder.setTitle("Successful");
+                        builder.setMessage("You can proceed");
+                        builder.setNegativeButton("OK", null);
+                        AlertDialog dialog = builder.create();
+                        dialog.show();
                     }
 
                 } else if (response.code() >= 400 && response.code() < 599) {

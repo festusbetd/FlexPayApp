@@ -107,11 +107,10 @@ public class SplashActivity extends AppCompatActivity {
             public void onAnimationEnd(Animation arg0) {
 
                 Intent intent = new Intent(getApplicationContext(),
-                        MainPage.class);
+                        LoginActivity.class);
                 startActivity(intent);
                 finish();
             }
-
             @Override
             public void onAnimationRepeat(Animation arg0) {
             }

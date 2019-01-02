@@ -105,12 +105,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
+                    android:alpha="0.9"
                     android:layout_marginLeft="30dp"
                     android:layout_alignParentStart="true"
                     android:layout_marginStart="30dp">
                     <Button
                         android:id="@+id/activity_dashboard_btn_view_deals"
-                        android:layout_width="wrap_content"
+                        android:layout_width="140dp"
                         android:layout_height="wrap_content"
                         android:text="@string/activity_content_dashboard_view_deals"
                         android:shadowColor="@android:color/transparent"
@@ -122,13 +123,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
+                    android:alpha="0.9"
                     android:layout_marginRight="30dp"
                     >
                     <Button
                         android:id="@+id/activity_dashboard_btn_setup_goals"
                         android:text="@string/activity_content_dashboard_setup_goals"
                         android:shadowColor="@android:color/transparent"
-                        android:layout_width="wrap_content"
+                        android:layout_width="140dp"
                         android:layout_height="wrap_content"
                         android:textColor="@color/pure_white"
                         android:background="@drawable/shapelogin"/>
@@ -261,7 +263,8 @@
                     android:textStyle="bold" />
                 <Button
                     android:id="@+id/activity_content_btnAddGoals"
-                    android:layout_width="wrap_content"
+                    android:layout_width="140dp"
+                    android:alpha="0.9"
                     android:layout_below="@+id/activity_dashboard_achieve_more_by_setting_goals"
                     android:layout_height="wrap_content"
                     android:text="@string/activity_content_dashboard_get_started"

@@ -123,7 +123,6 @@
     <string name="activity_goals_from_date">From Date</string>
     <string name="activity_deals_toolbar">Deals</string>
     <string name="username_required">Username Required</string>
-
     <string name="enter_valid_phone_number">Enter Valid Phone Number 2547***</string>
     <string name="minimum_of_6">Minimum of 6</string>
     <string name="enter_valid_email_address">Enter Valid Email</string>
@@ -131,4 +130,6 @@
     <string name="enter_first_name">Enter First Name</string>
     <string name="enter_last_name">Enter Last Name</string>
     <string name="enter_phone_number">Enter Phone Number</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="enter_username">Enter your username</string>
 </resources>

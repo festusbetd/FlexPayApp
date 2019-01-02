@@ -2,15 +2,13 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/regent_blue"
+    android:background="@drawable/gradient_color"
     android:layout_height="match_parent">
     <LinearLayout
         android:id="@+id/activity_sign_up_logo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/regent_blue"
         android:orientation="horizontal"
         android:padding="15dp">
             <TextView
@@ -34,12 +32,12 @@
         android:orientation="vertical">
         <android.support.v7.widget.CardView
             android:id="@+id/cv_add"
-            app:cardBackgroundColor="@color/pure_white"
+            app:cardBackgroundColor="@color/zircon"
             android:layout_gravity="center_horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="6dp"
-            app:cardElevation="3dp"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="13dp"
             app:cardUseCompatPadding="true"
             >
             <LinearLayout
@@ -54,7 +52,7 @@
                     android:layout_marginTop="25dp"
                     >
                     <android.support.design.widget.TextInputLayout
-                        android:id="@+id/editTextLoginPhoneTextInputLayoutRegister"
+                        android:id="@+id/editTextSignUpPhoneTextInputLayoutRegister"
                         android:textColorHint="@color/blue_lagoon"
                         android:layout_width="match_parent"
                         android:theme="@style/TextLabel"
@@ -87,7 +85,7 @@
                     android:orientation="vertical"
                     >
                     <android.support.design.widget.TextInputLayout
-                        android:id="@+id/editTextLoginEmailTextInputLayoutRegister"
+                        android:id="@+id/editTextSingUpEmailTextInputLayoutRegister"
                         android:textColorHint="@color/blue_lagoon"
                         android:layout_width="match_parent"
                         android:theme="@style/TextLabel"
@@ -118,7 +116,7 @@
                     android:orientation="vertical"
                     >
                     <android.support.design.widget.TextInputLayout
-                        android:id="@+id/editTextLoginusernameTextInputLayoutRegister"
+                        android:id="@+id/editTextSignUpUsernameTextInputLayoutRegister"
                         android:textColorHint="@color/blue_lagoon"
                         android:layout_width="match_parent"
                         android:theme="@style/TextLabel"
@@ -156,7 +154,7 @@
                             android:paddingTop="10dp"
                             android:paddingBottom="20dp">
                             <android.support.design.widget.TextInputLayout
-                                android:id="@+id/editTextLoginPasswordTextInputLayoutFirstNameRegister"
+                                android:id="@+id/editTextSignUpFirstNameTextInputLayoutFirstNameRegister"
                                 android:textColorHint="@color/blue_lagoon"
                                 android:layout_width="match_parent"
                                 android:theme="@style/TextLabel"
@@ -181,7 +179,7 @@
                                 android:textColorHighlight="@color/white"/>
                             </android.support.design.widget.TextInputLayout>
                             <android.support.design.widget.TextInputLayout
-                                android:id="@+id/editTextLoginPasswordTextInputLayoutLastNameRegister"
+                                android:id="@+id/editTextSignUpLAstNameTextInputLayoutLastNameRegister"
                                 android:textColorHint="@color/blue_lagoon"
                                 android:layout_width="match_parent"
                                 android:theme="@style/TextLabel"
@@ -221,14 +219,13 @@
                             android:layout_marginRight="10dp"
                             android:paddingBottom="10dp">
                             <android.support.design.widget.TextInputLayout
-                                android:id="@+id/editTextLoginPasswordTextInputLayoutPasswordRegister"
+                                android:id="@+id/editTextSignUpPasswordTextInputLayoutPasswordRegister"
                                 android:textColorHint="@color/blue_lagoon"
                                 android:layout_width="match_parent"
                                 android:theme="@style/TextLabel"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="0.5"
                                 android:layout_gravity="right"
-                                app:counterEnabled="true"
                                 app:counterTextAppearance="@style/counterText"
                                 app:counterOverflowTextAppearance="@style/counterOverride">
                             <EditText
@@ -248,14 +245,13 @@
                                 android:textColorHighlight="@color/white"/>
                             </android.support.design.widget.TextInputLayout>
                             <android.support.design.widget.TextInputLayout
-                                android:id="@+id/editTextLoginPasswordTextInputLayoutConfirmPasswordRegister"
+                                android:id="@+id/editTextSignUpConfirmPasswordTextInputLayoutConfirmPasswordRegister"
                                 android:textColorHint="@color/blue_lagoon"
                                 android:layout_width="match_parent"
                                 android:theme="@style/TextLabel"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="right"
                                 android:layout_weight="0.5"
-                                app:counterEnabled="true"
                                 app:counterTextAppearance="@style/counterText"
                                 app:counterOverflowTextAppearance="@style/counterOverride">
                             <EditText

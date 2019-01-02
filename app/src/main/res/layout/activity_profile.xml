@@ -26,8 +26,8 @@ android:orientation="vertical">
             android:layout_marginTop="45dp"
             android:background="@drawable/cercle_profile"
             android:layout_gravity="center_horizontal"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:src="@drawable/logo_flexpay_splashscreen"/>
         <TextView
             android:layout_marginTop="10dp"
@@ -114,7 +114,6 @@ android:orientation="vertical">
             android:src="@drawable/ic_profile_user"/>
         <TextView
             android:textStyle="bold"
-
             android:layout_gravity="center_vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -122,6 +121,5 @@ android:orientation="vertical">
             android:text="ID Number"/>
     </LinearLayout>
 </LinearLayout>
-
 
 </LinearLayout>

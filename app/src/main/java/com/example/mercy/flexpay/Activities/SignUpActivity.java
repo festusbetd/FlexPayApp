@@ -22,6 +22,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 import android.widget.RelativeLayout;
+import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -52,6 +53,8 @@ public class SignUpActivity extends AppCompatActivity {
     ProgressDialog progressDialog;
     private static final String SHARED_PREF_NAME = "profile";
     EditText editTextEmail, editTextPhone,editTextUsername, editTextFirst,editTextLast,editTextPassword,editTextConfirm_password;
+    TextInputLayout floatingPhoneLabel,floatingEmailLabel,floatingUsernameLabel,floatingFirstNameLabel,floatingLastNameLabel,floatingPasswordLabel,
+    floatingConfirmPasswordLabel;
     TextView textViewSignUp;
     String email,phone_number_1,username,first_name,last_name,password,confirm_password;
     int user_type = 1;
@@ -79,6 +82,14 @@ public class SignUpActivity extends AppCompatActivity {
         editTextConfirm_password = (EditText) findViewById(R.id.editTextConfirm_password);
         terms=  findViewById(R.id.termsCheck);
 
+        floatingPhoneLabel = (TextInputLayout) findViewById(R.id.editTextSignUpPhoneTextInputLayoutRegister);
+        floatingEmailLabel = (TextInputLayout) findViewById(R.id.editTextLoginEmailTextInputLayout);
+        floatingUsernameLabel = (TextInputLayout) findViewById(R.id.editTextSignUpUsernameTextInputLayoutRegister);
+        floatingFirstNameLabel = (TextInputLayout) findViewById(R.id.editTextSignUpFirstNameTextInputLayoutFirstNameRegister);
+        floatingLastNameLabel = (TextInputLayout) findViewById(R.id.editTextSignUpLAstNameTextInputLayoutLastNameRegister);
+        floatingPasswordLabel = (TextInputLayout) findViewById(R.id.editTextSignUpPasswordTextInputLayoutPasswordRegister);
+        floatingConfirmPasswordLabel = (TextInputLayout) findViewById(R.id.editTextSignUpConfirmPasswordTextInputLayoutConfirmPasswordRegister);
+
         buttonSignup = (Button) findViewById(R.id.buttonSignup);
       // Font path
         String fontPath = "font/JosefinSans-Light.ttf";
@@ -98,7 +109,7 @@ public class SignUpActivity extends AppCompatActivity {
 
         terms = findViewById(R.id.termsCheck);
 
-        final TextInputLayout floatingPhoneLabel = (TextInputLayout) findViewById(R.id.editTextLoginPhoneTextInputLayoutRegister);
+        final TextInputLayout floatingPhoneLabel = (TextInputLayout) findViewById(R.id.editTextSignUpPhoneTextInputLayoutRegister);
         floatingPhoneLabel.getEditText().addTextChangedListener(new TextWatcher() {
             // ...
             @Override
@@ -126,7 +137,105 @@ public class SignUpActivity extends AppCompatActivity {
 
             }
         });
-        final TextInputLayout floatingPasswordLabel = (TextInputLayout) findViewById(R.id.editTextLoginPasswordTextInputLayoutPasswordRegister);
+        final TextInputLayout floatingEmailLabel = (TextInputLayout) findViewById(R.id.editTextSingUpEmailTextInputLayoutRegister);
+        floatingEmailLabel.getEditText().addTextChangedListener(new TextWatcher() {
+            // ...
+            @Override
+            public void onTextChanged(CharSequence text, int start, int count, int after) {
+                if (text.length() < 5 ) {
+                    floatingEmailLabel.setError(getString(R.string.enter_valid_email_address));
+                    floatingEmailLabel.setErrorEnabled(true);
+                }
+                else {
+                    floatingEmailLabel.setErrorEnabled(false);
+                }
+            }
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count,
+                                          int after) {
+                // TODO Auto-generated method stub
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                floatingEmailLabel.setError(null);
+            }
+        });
+        final TextInputLayout floatingUsernameLabel = (TextInputLayout) findViewById(R.id.editTextSignUpUsernameTextInputLayoutRegister);
+        floatingUsernameLabel.getEditText().addTextChangedListener(new TextWatcher() {
+            // ...
+            @Override
+            public void onTextChanged(CharSequence text, int start, int count, int after) {
+                if (text.length() < 1 ) {
+                    floatingUsernameLabel.setError(getString(R.string.enter_username));
+                    floatingUsernameLabel.setErrorEnabled(true);
+                }
+                else {
+                    floatingUsernameLabel.setErrorEnabled(false);
+                }
+            }
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count,
+                                          int after) {
+                // TODO Auto-generated method stub
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                floatingUsernameLabel.setError(null);
+            }
+        });
+        //first name
+        final TextInputLayout floatingFirstNameLabel = (TextInputLayout) findViewById(R.id.editTextSignUpFirstNameTextInputLayoutFirstNameRegister);
+        floatingFirstNameLabel.getEditText().addTextChangedListener(new TextWatcher() {
+            // ...
+            @Override
+            public void onTextChanged(CharSequence text, int start, int count, int after) {
+                if (text.length() < 1 ) {
+                    floatingFirstNameLabel.setError(getString(R.string.enter_username));
+                    floatingFirstNameLabel.setErrorEnabled(true);
+                }
+                else {
+                    floatingFirstNameLabel.setErrorEnabled(false);
+                }
+            }
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count,
+                                          int after) {
+                // TODO Auto-generated method stub
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                floatingFirstNameLabel.setError(null);
+            }
+        });
+        //second name
+        final TextInputLayout floatingLastNameLabel = (TextInputLayout) findViewById(R.id.editTextSignUpLAstNameTextInputLayoutLastNameRegister);
+        floatingLastNameLabel.getEditText().addTextChangedListener(new TextWatcher() {
+            // ...
+            @Override
+            public void onTextChanged(CharSequence text, int start, int count, int after) {
+                if (text.length() < 1 ) {
+                    floatingLastNameLabel.setError(getString(R.string.enter_username));
+                    floatingLastNameLabel.setErrorEnabled(true);
+                }
+                else {
+                    floatingLastNameLabel.setErrorEnabled(false);
+                }
+            }
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count,
+                                          int after) {
+                // TODO Auto-generated method stub
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                floatingLastNameLabel.setError(null);
+            }
+        });
+        final TextInputLayout floatingPasswordLabel = (TextInputLayout) findViewById(R.id.editTextSignUpPasswordTextInputLayoutPasswordRegister);
         floatingPasswordLabel.getEditText().addTextChangedListener(new TextWatcher() {
 
             @Override
@@ -150,12 +259,12 @@ public class SignUpActivity extends AppCompatActivity {
 
             }
         });
-        final TextInputLayout floatingConfirmPasswordLabel = (TextInputLayout) findViewById(R.id.editTextLoginPasswordTextInputLayoutConfirmPasswordRegister);
+        final TextInputLayout floatingConfirmPasswordLabel = (TextInputLayout) findViewById(R.id.editTextSignUpConfirmPasswordTextInputLayoutConfirmPasswordRegister);
         floatingConfirmPasswordLabel.getEditText().addTextChangedListener(new TextWatcher() {
             // ...
             @Override
             public void onTextChanged(CharSequence text, int start, int count, int after) {
-                if (text.length() > 0 && text.length() < 6) {
+                if (text.length() < 6) {
                     floatingConfirmPasswordLabel.setError(getString(R.string.minimum_of_6));
                     floatingConfirmPasswordLabel.setErrorEnabled(true);
                 }
@@ -201,57 +310,43 @@ public class SignUpActivity extends AppCompatActivity {
 
                 editor.apply();
                  if (TextUtils.isEmpty(phone_number_1) || phone_number_1.length() < 12) {
-                     final TextInputLayout floatingPhoneLabel = (TextInputLayout) findViewById(R.id.editTextLoginPhoneTextInputLayoutRegister);
                      floatingPhoneLabel.setError("Enter a valid Phone number");
-                     floatingPhoneLabel.setErrorEnabled(true);;
+                     floatingPhoneLabel.setErrorEnabled(true);
                     return;
                 }
-               else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                    final TextInputLayout floatingEmailLabel = (TextInputLayout) findViewById(R.id.editTextLoginEmailTextInputLayoutRegister);
-                    floatingEmailLabel .setError("Enter a valid email");
-                    floatingEmailLabel .requestFocus();
+                else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+
+                     floatingEmailLabel.setError(getString(R.string.enter_valid_email_address));
+                     floatingEmailLabel.setErrorEnabled(true);
+                    // Toast.makeText(getApplicationContext(), "error", Toast.LENGTH_SHORT).show();
                     return;
                 }   else if (TextUtils.isEmpty(username)) {
-                     final TextInputLayout floatingEmailLabel = (TextInputLayout) findViewById(R.id.editTextLoginusernameTextInputLayoutRegister);
-                     floatingEmailLabel.setError("Please enter username");
-                     floatingEmailLabel.setErrorEnabled(true);
+                      floatingUsernameLabel .setError("Please enter username");
+                     floatingUsernameLabel .setErrorEnabled(true);
                     return;
                 }
                 else if (TextUtils.isEmpty(first_name)) {
-                     final TextInputLayout floatingFirstNameLabel = (TextInputLayout) findViewById(R.id.editTextLoginPasswordTextInputLayoutFirstNameRegister);
-                     floatingFirstNameLabel.setError(getString(R.string.enter_first_name));
+                      floatingFirstNameLabel.setError(getString(R.string.enter_first_name));
                      floatingFirstNameLabel.setErrorEnabled(true);
                     return;
                 }
                 else if (TextUtils.isEmpty(last_name)) {
-                     final TextInputLayout floatingLastNameLabel = (TextInputLayout) findViewById(R.id.editTextLoginPasswordTextInputLayoutLastNameRegister);
-                     floatingLastNameLabel.setError(getString(R.string.enter_last_name));
+                      floatingLastNameLabel.setError(getString(R.string.enter_last_name));
                      floatingLastNameLabel.setErrorEnabled(true);
                     return;
                 } else if (TextUtils.isEmpty(password)) {
-                     final TextInputLayout floatingPasswordLabel = (TextInputLayout) findViewById(R.id.editTextLoginPasswordTextInputLayoutPasswordRegister);
-                     floatingPasswordLabel.setError(getString(R.string.minimum_of_6));
+                       floatingPasswordLabel.setError(getString(R.string.minimum_of_6));
                      floatingPasswordLabel.setErrorEnabled(true);
                     return;
                 } else if (TextUtils.isEmpty(confirm_password)) {
-                     final TextInputLayout floatingConfirmPasswordLabel = (TextInputLayout) findViewById(R.id.editTextLoginPasswordTextInputLayoutConfirmPasswordRegister);
-                     floatingConfirmPasswordLabel.setError(getString(R.string.minimum_of_6));
+                      floatingConfirmPasswordLabel.setError(getString(R.string.minimum_of_6));
                      floatingConfirmPasswordLabel.setErrorEnabled(true);
                     return;
 
-                }  else if (TextUtils.isEmpty(password) || confirm_password.length() < 6) {
-                     final TextInputLayout floatingPasswordLabel = (TextInputLayout) findViewById(R.id.editTextLoginPasswordTextInputLayoutPasswordRegister);
-                     floatingPasswordLabel.setError(getString(R.string.minimum_of_6));
-                     floatingPasswordLabel.setErrorEnabled(true);
-                     final TextInputLayout floatingConfirmPasswordLabel = (TextInputLayout) findViewById(R.id.editTextLoginPasswordTextInputLayoutConfirmPasswordRegister);
-                     floatingConfirmPasswordLabel.setError(getString(R.string.minimum_of_6));
-                     floatingConfirmPasswordLabel.setErrorEnabled(true);
-
-                    return;
                 }
                 else if (!password.equals(confirm_password)) {
-                     final TextInputLayout floatingConfirmPasswordLabel = (TextInputLayout) findViewById(R.id.editTextLoginPasswordTextInputLayoutConfirmPasswordRegister);
-                     floatingConfirmPasswordLabel.setError(getString(R.string.both_passwords_should_match));
+
+                      floatingConfirmPasswordLabel.setError(getString(R.string.both_passwords_should_match));
                      floatingConfirmPasswordLabel.setErrorEnabled(true);
                     return;
                 }
@@ -264,7 +359,6 @@ public class SignUpActivity extends AppCompatActivity {
                     AlertDialog dialog = builder.create();
                     dialog.show();
 
-
                     /*Snackbar snackbar = Snackbar
                             .make(linearLayout, "No Internet", Snackbar.LENGTH_INDEFINITE)
                             .setAction("RETRY", new View.OnClickListener() {
@@ -274,7 +368,6 @@ public class SignUpActivity extends AppCompatActivity {
                                 }
                             });
                     snackbar.show();*/
-
                 }
                else if(terms.isChecked()){
                     registerUser();
@@ -294,12 +387,7 @@ public class SignUpActivity extends AppCompatActivity {
         });
     }
 
-    private boolean isValidEmailAddress(String email) {
-        String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
-        java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
-        java.util.regex.Matcher m = p.matcher(email);
-        return m.matches();
-    }
+
 
 
     private boolean isNetworkConnected() {
@@ -409,6 +497,8 @@ public class SignUpActivity extends AppCompatActivity {
             public void onResponse(Call<AuthUser> call, retrofit2.Response<AuthUser> response) {
                 progressDialog.dismiss();
                 if (response.isSuccessful()) {
+                    Intent intentDashboard = new Intent(getApplicationContext(),DashboardActivity.class);
+                    startActivity(intentDashboard);
                     if (response.body() != null) {
                   /*  Snackbar snackbar = Snackbar.make(linearLayout,"Registration Successful",Snackbar.LENGTH_INDEFINITE)
                             .setAction("Login", new View.OnClickListener() {
@@ -418,8 +508,8 @@ public class SignUpActivity extends AppCompatActivity {
                                 }
                             });*/
 
-                       Intent intentDashboard = new Intent(getApplicationContext(),DashboardActivity.class);
-                        startActivity(intentDashboard);
+                      /* Intent intentDashboard = new Intent(getApplicationContext(),DashboardActivity.class);
+                        startActivity(intentDashboard);*/
                     }
 
                 }

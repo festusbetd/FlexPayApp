@@ -165,7 +165,7 @@ public class DealsActivity extends AppCompatActivity {
 
                                 int bal = (139000 - finalAmount);
 
-                               lg.setText("Bal:Ksh "+bal+"within 60 days");
+                               lg.setText("Bal:Ksh "+bal+" within 60 days");
                             }
                         })
                 .setNegativeButton("Cancel",
@@ -211,7 +211,7 @@ public class DealsActivity extends AppCompatActivity {
 
                                 int bal = (115000 - finalAmount);
 
-                                sony.setText("Bal:Ksh "+bal+"within 60 days");
+                                sony.setText("Bal:Ksh "+bal+" within 60 days");
                             }
                         })
                 .setNegativeButton("Cancel",
@@ -254,10 +254,8 @@ public class DealsActivity extends AppCompatActivity {
                                 userInput.setText(amount);
 
                                 int finalAmount =Integer.parseInt(amount);
-
                                 int bal = (85000 - finalAmount);
-
-                                other.setText("Bal:Ksh "+bal+"within 60 days");
+                                other.setText("Bal:Ksh "+bal+" within 60 days");
                             }
                         })
                 .setNegativeButton("Cancel",

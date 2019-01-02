@@ -24,7 +24,6 @@ public interface APIService {
             @Field("first_name") String first_name,
             @Field("last_name") String last_name,
             @Field("phone_number_1") String phone_number_1);
-
     //the signin call
     @FormUrlEncoded
     @POST("login")
@@ -32,7 +31,6 @@ public interface APIService {
             @Field("email") String email,
             @Field("password") String password
     );
-
     @POST("products")
     Call<Products> doGetProductsList();
 
