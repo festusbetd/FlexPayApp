@@ -88,7 +88,7 @@ public class GoalsActivity extends AppCompatActivity implements View.OnClickList
                         @Override
                         public void onDateSet(DatePicker view, int year,
                                               int monthOfYear, int dayOfMonth) {
-                            toDate.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
+                            toDate.setText(dayOfMonth + "." + (monthOfYear + 1) + "." + year);
                         }
                     }, mYear, mMonth, mDay);
             datePickerDialog.show();

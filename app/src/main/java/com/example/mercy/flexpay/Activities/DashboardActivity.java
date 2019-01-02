@@ -62,7 +62,7 @@ public class DashboardActivity extends AppCompatActivity
         });
         setSupportActionBar(toolbar);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-       // jsoncall();
+
         // Spinner element
         Spinner spinner =  findViewById(R.id.spinner);
         // Spinner Drop down elements
@@ -188,15 +188,6 @@ public class DashboardActivity extends AppCompatActivity
             startActivity(dealsIntent);
             return true;
         }
-      /*  else if (id == R.id.nav_settings) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
-            builder.setTitle("Error");
-            builder.setMessage("No settings activity");
-            builder.setNegativeButton("OK", null);
-            AlertDialog dialog = builder.create();
-            dialog.show();
-            return true;
-        }*/
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

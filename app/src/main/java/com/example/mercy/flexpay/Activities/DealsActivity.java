@@ -135,8 +135,6 @@ public class DealsActivity extends AppCompatActivity {
 
     private void lgBooking() {
 
-        //showAddItemDialog(DealsActivity.this);
-        // get prompts.xml view
         // get prompts.xml view
         LayoutInflater li = LayoutInflater.from(context);
         View promptsView = li.inflate(R.layout.prompts, null);
@@ -182,7 +180,6 @@ public class DealsActivity extends AppCompatActivity {
         alertDialog.show();
     }
     private void sonyBooking() {
-        // get prompts.xml view
         // get prompts.xml view
         LayoutInflater li = LayoutInflater.from(context);
         View promptsView = li.inflate(R.layout.prompts, null);

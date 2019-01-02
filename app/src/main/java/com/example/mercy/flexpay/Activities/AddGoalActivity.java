@@ -145,19 +145,7 @@ public class AddGoalActivity extends AppCompatActivity implements View.OnClickLi
             // Inflate the custom layout/view
             View customView = inflater.inflate(R.layout.custom_layout,null);
 
-                /*
-                    public PopupWindow (View contentView, int width, int height)
-                        Create a new non focusable popup window which can display the contentView.
-                        The dimension of the window must be passed to this constructor.
 
-                        The popup does not provide any background. This should be handled by
-                        the content view.
-
-                    Parameters
-                        contentView : the popup's content
-                        width : the popup's width
-                        height : the popup's height
-                */
             // Initialize a new instance of popup window
             mPopupWindow = new PopupWindow(
                     customView,

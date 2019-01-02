@@ -126,6 +126,7 @@ public class BookingActivity extends AppCompatActivity implements AdapterView.On
         products_types.add("10");
         products_types.add("20");
         products_types.add("30");
+        products_types.add("40");
         // Creating adapter for spinner
         ArrayAdapter<String> dataAdapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, products_types);
 
@@ -154,6 +155,7 @@ public class BookingActivity extends AppCompatActivity implements AdapterView.On
         status_show.add("10");
         status_show.add("20");
         status_show.add("30");
+        status_show.add("40");
 
         ArrayAdapter<String> dataAdapter_show = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,status_show);
 

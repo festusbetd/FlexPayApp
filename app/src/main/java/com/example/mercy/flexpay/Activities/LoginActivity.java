@@ -279,7 +279,7 @@ public class LoginActivity extends AppCompatActivity {
         } else {
 
             Snackbar snackbar = Snackbar
-                    .make(linearLayout, "Please check your internet connection", Snackbar.LENGTH_LONG)
+                    .make(linearLayout, "You are ofline", Snackbar.LENGTH_LONG)
                     .setAction("RETRY", new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
