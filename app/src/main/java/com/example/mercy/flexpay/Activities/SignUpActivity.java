@@ -517,9 +517,8 @@ public class SignUpActivity extends AppCompatActivity {
 
                 else {
 
-                    startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
-                    finish();
-                 /*   Snackbar snackbar = Snackbar
+                    Toast.makeText(getApplicationContext(),""+response.body(), Toast.LENGTH_SHORT).show();
+                   Snackbar snackbar = Snackbar
                             .make(linearLayout, "Username or Phone Number Exists", Snackbar.LENGTH_INDEFINITE)
                             .setAction("RETRY", new View.OnClickListener() {
                                 @Override
@@ -528,7 +527,7 @@ public class SignUpActivity extends AppCompatActivity {
                                 }
                             });
 
-                    snackbar.show();*/
+                    snackbar.show();
                 }
             }
             @Override

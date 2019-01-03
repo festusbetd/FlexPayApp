@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -195,19 +196,47 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<AuthUser> call, Response<AuthUser> response) {
                 progressDialog.dismiss();
+
                 if (response.isSuccessful()) {
+                    // todo start a user activity
+                    startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
+                    finish();
+                }
+                else {
+
+                   switch (response.code()) {
+                        case 404:
+                            Toast.makeText(getApplicationContext(), "not found:"+ response.body(), Toast.LENGTH_SHORT).show();
+                            break;
+                        case 500:
+                            Toast.makeText(getApplicationContext(), "server broken:"+ response.body(), Toast.LENGTH_SHORT).show();
+                            break;
+                        default:
+                            Toast.makeText(getApplicationContext(),""+response.body(), Toast.LENGTH_SHORT).show();
+
+                         /*   AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
+                            builder.setTitle("Error");
+                            builder.setMessage("Wrong Email/Password");
+                            builder.setNegativeButton("OK", null);
+                            AlertDialog dialog = builder.create();
+                            dialog.show();*/
+                            break;
+                    }
+                }
+              /*  if (response.isSuccessful()) {
                     if (response.body() != null) {
-                     /*   AuthUser authUser = response.body();
+                     *//*   AuthUser authUser = response.body();
                         access_token = authUser.getAccessToken();
                         refresh_token = authUser.getRefreshToken();
 
                         prefs.edit().putString(ACCESS_TOKEN, access_token).apply();
                         prefs.edit().putString(REFRESH_TOKEN, refresh_token).apply();
 
-                        session.createLoginSession(email, password, access_token);*/
+                        session.createLoginSession(email, password, access_token);*//*
                    //     getCustomerProfile();
-                      /*  startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
-                        finish();*/
+                      *//*  startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
+                        finish();*//*
+
                         Toast.makeText(LoginActivity.this, "", Toast.LENGTH_SHORT).show();
 
                         AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
@@ -226,7 +255,7 @@ public class LoginActivity extends AppCompatActivity {
                     AlertDialog dialog = builder.create();
                     dialog.show();
 
-                    /*Snackbar snackbar = Snackbar
+                    *//*Snackbar snackbar = Snackbar
                             .make(linearLayout, "Wrong username or password", Snackbar.LENGTH_INDEFINITE)
                             .setAction("RETRY", new View.OnClickListener() {
                                 @Override
@@ -236,7 +265,7 @@ public class LoginActivity extends AppCompatActivity {
                                 }
                             });
 
-                    snackbar.show();*/
+                    snackbar.show();*//*
                 } else {
                     Snackbar snackbar = Snackbar
                             .make(linearLayout, "Something went wrong", Snackbar.LENGTH_INDEFINITE)
@@ -249,7 +278,7 @@ public class LoginActivity extends AppCompatActivity {
                             });
 
                     snackbar.show();
-                }
+                }*/
 
             }
 
