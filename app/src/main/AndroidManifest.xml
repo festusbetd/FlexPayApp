@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.mercy.flexpay"
+    package="com.example.version2.flexpay"
    >
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -12,9 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.WalkthroughActivity" />
+        <activity android:name="com.example.version2.flexpay.Activities.WalkthroughActivity" />
         <activity
-            android:name=".Activities.SplashActivity"
+            android:name="com.example.version2.flexpay.Activities.SplashActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,26 +22,26 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activities.LoginActivity"
+            android:name="com.example.version2.flexpay.Activities.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".Activities.SignUpActivity" />
+        <activity android:name="com.example.version2.flexpay.Activities.SignUpActivity" />
         <activity
-            android:name=".Activities.DashboardActivity"
+            android:name="com.example.version2.flexpay.Activities.DashboardActivity"
             android:label="@string/title_activity_dashboard"
             android:theme="@style/AppTheme" >
 
         </activity>
-        <activity android:name=".Activities.walletActivity" />
-        <activity android:name=".Activities.GoalsActivity" />
-        <activity android:name=".Activities.DealsActivity" />
-        <activity android:name=".Activities.BookingActivity" />
-        <activity android:name=".Activities.ProfileActivity" />
-        <activity android:name=".Activities.AddGoalActivity" />
-        <activity android:name=".Activities.withdrawActivity" />
-        <activity android:name=".Activities.SettingsActivity" />
-        <activity android:name=".Activities.MainPage" />
-        <activity android:name=".Activities.DummyActivity">
+        <activity android:name="com.example.version2.flexpay.Activities.walletActivity" />
+        <activity android:name="com.example.version2.flexpay.Activities.GoalsActivity" />
+        <activity android:name="com.example.version2.flexpay.Activities.DealsActivity" />
+        <activity android:name="com.example.version2.flexpay.Activities.BookingActivity" />
+        <activity android:name="com.example.version2.flexpay.Activities.ProfileActivity" />
+        <activity android:name="com.example.version2.flexpay.Activities.AddGoalActivity" />
+        <activity android:name="com.example.version2.flexpay.Activities.withdrawActivity" />
+        <activity android:name="com.example.version2.flexpay.Activities.SettingsActivity" />
+        <activity android:name="com.example.version2.flexpay.Activities.MainPage" />
+        <activity android:name="com.example.version2.flexpay.Activities.DummyActivity">
         </activity>
     </application>
 
